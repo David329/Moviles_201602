@@ -9,9 +9,12 @@ create table Admin(		AdminID int auto_increment primary key,
                       );
                       
 create table Enterprise(EnterpriseID int auto_increment primary key,
+						Email varchar(40) not null,
+                        Password varchar(40) not null,
 						Name varchar(40)not null,
                         Category varchar(40)not null,
-                        RUC int not null
+                        RUC int not null,
+                        Status varchar(10)not null
                         );       
 create table Tour(		TourID int auto_increment primary key,
 						Name varchar(40)not null,

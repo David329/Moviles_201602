@@ -11,9 +11,12 @@ package com.guian.entities;
  */
 public class Enterprise {
     private int EnterpriseID;
+    private String Email;
+    private String Password;
     private String Name;
     private String Category;
-    private int RUC;
+    private int RUC;    
+    private String Status;
 
     public int getEnterpriseID() {
         return EnterpriseID;
@@ -21,6 +24,22 @@ public class Enterprise {
 
     public void setEnterpriseID(int EnterpriseID) {
         this.EnterpriseID = EnterpriseID;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
     public String getName() {
@@ -46,5 +65,14 @@ public class Enterprise {
     public void setRUC(int RUC) {
         this.RUC = RUC;
     }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
     
+        
 }
