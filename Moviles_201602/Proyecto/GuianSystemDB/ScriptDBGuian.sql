@@ -15,9 +15,9 @@ create table Enterprise(EnterpriseID int auto_increment primary key,
                         );       
 create table Tour(		TourID int auto_increment primary key,
 						Name varchar(40)not null,
-                        Description text not null,
+                        Description varchar(9999) not null,
                         Star int,
-                        Logo varchar(40)not null,/*link*/
+                        Logo varchar(9999)not null,/*link*/
                         Cost decimal(6,2)not null,
                         EnterpriseID int not null 
 						);
@@ -27,10 +27,10 @@ create table Place_Tour(PlaceId int not null,
 						);
 create table Place(		PlaceID int auto_increment primary key,
 						Name varchar(40)not null,
-                        Audio varchar(40),/*link*/
+                        Audio varchar(9999),/*link*/
                         Longitud varchar(40),
                         Latitud varchar(40),
-                        Description text not null,
+                        Description varchar(9999) not null,
                         Visits int,
                         CityID int not null
                         );         
