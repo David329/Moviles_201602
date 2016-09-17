@@ -188,6 +188,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\build\css\custom.css" />
@@ -375,7 +376,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Views\Home\index.cshtml" />
-    <None Include="Views\Home\login.cshtml" />
+    <None Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\vendors\bootstrap\.bower.json" />

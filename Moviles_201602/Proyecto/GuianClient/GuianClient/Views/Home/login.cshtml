@@ -1,7 +1,7 @@
-﻿@*@model GYM_UPC.ViewModel.LoginViewModel*@
+﻿@model GuianClient.ViewModel.LoginViewModel
 @{
     Layout = null;
-    ViewBag.Title = "login";
+    ViewBag.Title = "Login";
 }
 
 <!DOCTYPE html>
@@ -13,8 +13,8 @@
     <title>Iniciar Sesión - Muévete UPC</title>
     <link rel="icon" href="@Url.Content("~/Content/images/logo-upc-blanco.png")">
 
-    <link href="@Url.Content("~/Content/vendors/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
-    <link href="@Url.Content("~/Content/vendors/font-awesome/css/font-awesome.min.css")" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendors/bootstrap/dist/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendors/font-awesome/css/font-awesome.min.css")">
     <link rel="stylesheet" href="@Url.Content("~/Content/vendors/assets/css/form-elements.css")">
     <link rel="stylesheet" href="@Url.Content("~/Content/vendors/assets/css/style.css")">
 </head>
@@ -29,12 +29,13 @@
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1>
                             <img src="@Url.Content("~/Content/images/logo.png")" alt="logo UPC">
-                            MUÉVETE UPC - UPC GYM
+                            Guian - UPC
                             <img src="@Url.Content("~/Content/images/workout.jpg")" width="70px" height="70px" alt="logo UPC">
                         </h1>
                         <div class="description">
                             <p>
-                                Encuentra gimnasios cerca a tu ubicación. Aprovecha las promociones que ofrecen en cualquier momento y con un solo click.
+                                Si estas interesado en ofrecer servicio de Turismo en nuestra aplicacion esta es la oportunidad! Registrate o inicia sesion para empezar a ofrecer paseos turisticos a travez de nuestra App Guian.
+                                @*Encuentra gimnasios cerca a tu ubicación. Aprovecha las promociones que ofrecen en cualquier momento y con un solo click.*@
                             </p>
                         </div>
                     </div>
@@ -55,12 +56,12 @@
                             <div class="form-bottom">
                                 <form role="form" method="post" action="@Url.Action("Login", "Home")" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-username">Usuario</label>
-                     @*                   @Html.TextBoxFor(x => x.Usuario, new { @type = "text", @name = "usuario", @placeholder = "Usuario...", @class = "form-username form-control", @id = "usuario" })*@
+                                        <label class="sr-only" for="form-username">Correo</label>
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.email, new { @type = "text", @name = "correo", @placeholder = "Correo...", @class = "form-username form-control", @id = "correo" })
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-password">Contraseña</label>
-                       @*                 @Html.TextBoxFor(x => x.Clave, new { @type = "password", @name = "password", @placeholder = "Contraseña...", @class = "form-password form-control", @id = "password" })*@
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.password, new { @type = "password", @name = "pass", @placeholder = "Contraseña...", @class = "form-password form-control", @id = "pass" })
                                     </div>
                                     <button type="submit" class="btn"><i class="fa fa-sign-in"></i> Iniciar Sesión</button>
                                 </form>
@@ -68,19 +69,19 @@
                         </div>
 
                         @*<div class="social-login">
-                            <h3>...o inicia sesión con:</h3>
-                            <div class="social-login-buttons">
-                                <a class="btn btn-link-1 btn-link-1-facebook" href="#">
-                                    <i class="fa fa-facebook"></i> Facebook
-                                </a>
-                                <a class="btn btn-link-1 btn-link-1-twitter" href="#">
-                                    <i class="fa fa-twitter"></i> Twitter
-                                </a>
-                                <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
-                                    <i class="fa fa-google-plus"></i> Google Plus
-                                </a>
-                            </div>
-                        </div>*@
+                                <h3>...o inicia sesión con:</h3>
+                                <div class="social-login-buttons">
+                                    <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                        <i class="fa fa-facebook"></i> Facebook
+                                    </a>
+                                    <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                    <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                        <i class="fa fa-google-plus"></i> Google Plus
+                                    </a>
+                                </div>
+                            </div>*@
                     </div>
 
                     <div class="col-sm-1 middle-border"></div>
@@ -94,7 +95,7 @@
                                     <h3>Regístrate ahora</h3>
                                     <p>
                                         Llena tus datos para poder acceder:<br />
-                                        <i>(Solo para clientes)</i>
+                                        <i>(Solo para Empresas)</i>
                                     </p>
                                 </div>
                                 <div class="form-top-right">
@@ -102,34 +103,26 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" method="post" action="@Url.Action("AddCliente", "Home")" class="registration-form">
+                                <form role="form" method="post" action="@Url.Action("AddEnterprise", "Home")" class="registration-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="nombre">Nombre</label>
-                             @*           @Html.TextBoxFor(x => x.Nombre, new { @type = "text", @name = "nombre", @placeholder = "Nombre...", @class = "form-first-name form-control", @id = "nombre" })*@
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.name, new { @type = "text", @name = "nombre", @placeholder = "Nombre...", @class = "form-first-name form-control", @id = "nombre" })
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="apellido">Apellidos</label>
-                               @*         @Html.TextBoxFor(x => x.Apellido, new { @type = "text", @name = "apellido", @placeholder = "Apellido...", @class = "form-last-name form-control", @id = "apellido" })*@
+                                        <label class="sr-only" for="ruc">RUC</label>
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.RUC, new { @type = "text", @name = "ruc", @placeholder = "RUC...", @class = "form-last-name form-control", @id = "ruc" })
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="dni">DNI</label>
-                                 @*       @Html.TextBoxFor(x => x.DNI, new { @type = "text", @name = "dni", @placeholder = "DNI...", @class = "form-last-name form-control", @id = "dni" })*@
+                                        <label class="sr-only" for="categoria">Categoria</label>
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.category, new { @type = "text", @name = "categorria", @placeholder = "Categoria...", @class = "form-last-name form-control", @id = "categoria" })
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="dni">Peso</label>
-                              @*          @Html.TextBoxFor(x => x.Peso, new { @type = "text", @name = "peso", @placeholder = "Peso...", @class = "form-last-name form-control", @id = "peso" })*@
+                                        <label class="sr-only" for="correo">Correo</label>
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.email, new { @type = "text", @name = "correo", @placeholder = "Correo...", @class = "form-last-name form-control", @id = "correo" })
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="dni">Talla</label>
-                              @*          @Html.TextBoxFor(x => x.Talla, new { @type = "text", @name = "talla", @placeholder = "Talla...", @class = "form-last-name form-control", @id = "talla" })*@
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="dni">Usuario</label>
-                            @*            @Html.TextBoxFor(x => x.Usuario, new { @type = "text", @name = "usuario", @placeholder = "Usuario...", @class = "form-last-name form-control", @id = "usuario" })*@
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="dni">Clave</label>
-                          @*              @Html.TextBoxFor(x => x.Clave, new { @type = "text", @name = "clave", @placeholder = "Clave...", @class = "form-last-name form-control", @id = "clave" })*@
+                                        <label class="sr-only" for="pass">Contraseña</label>
+                                        @Html.TextBoxFor(x => x.ObjEnterprise.password, new { @type = "password", @name = "pass", @placeholder = "Contraseña...", @class = "form-last-name form-control", @id = "pass" })
                                     </div>
                                     <button type="submit" class="btn">Registrarse</button>
                                 </form>
@@ -146,10 +139,13 @@
             <div class="row">
 
                 <div class="col-sm-8 col-sm-offset-2">
-                    <div class="footer-border"></div>
+                    <div class="footer-border">Integrantes</div>
                     <p>
-                        Muévete UPC - UPC GYM <br />
-                        Desarrollado por: <a href="https://www.facebook.com/ulices.melendezacosta">Ulices Meléndez</a> y <a href="https://www.facebook.com/david.solanoupec">David Silva</a>
+                        Guian - UPC<br />
+                        Desarrollado por: <a href="https://www.facebook.com/david.solanoupec">David Silva</a>,
+                         <a href="https://www.facebook.com/ulices.melendezacosta">El pirata</a>,
+                         <a href="https://www.facebook.com/alex.espino.587?fref=ts">Pepi</a> e
+                         <a href="https://www.facebook.com/delacroix.van.cleef?fref=ts">Ian Maguina</a>
                     </p>
                 </div>
 
