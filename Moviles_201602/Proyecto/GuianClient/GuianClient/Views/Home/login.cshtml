@@ -1,180 +1,165 @@
+﻿@*@model GYM_UPC.ViewModel.LoginViewModel*@
+@{
+    Layout = null;
+    ViewBag.Title = "login";
+}
+
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Random Login Form</title>
-    
-    
-    
-    
-        <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar Sesión - Muévete UPC</title>
+    <link rel="icon" href="@Url.Content("~/Content/images/logo-upc-blanco.png")">
 
-body{
-	margin: 0;
-	padding: 0;
-	background: #fff;
+    <link href="@Url.Content("~/Content/vendors/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/vendors/font-awesome/css/font-awesome.min.css")" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendors/assets/css/form-elements.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendors/assets/css/style.css")">
+</head>
+<body>
+    <!-- Top content -->
+    <div class="top-content">
 
-	color: #fff;
-	font-family: Arial;
-	font-size: 12px;
-}
+        <div class="inner-bg">
+            <div class="container">
 
-.body{
-	position: absolute;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
-	width: auto;
-	height: auto;
-	background-image: url(https://jreznik.fedorapeople.org/kde/f10/kdm-theme/loginbox.png);
-	background-size: cover;
-	-webkit-filter: blur(5px);
-	z-index: 0;
-}
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>
+                            <img src="@Url.Content("~/Content/images/logo.png")" alt="logo UPC">
+                            MUÉVETE UPC - UPC GYM
+                            <img src="@Url.Content("~/Content/images/workout.jpg")" width="70px" height="70px" alt="logo UPC">
+                        </h1>
+                        <div class="description">
+                            <p>
+                                Encuentra gimnasios cerca a tu ubicación. Aprovecha las promociones que ofrecen en cualquier momento y con un solo click.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-.grad{
-	position: absolute;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
-	width: auto;
-	height: auto;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-	z-index: 1;
-	opacity: 0.7;
-}
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Iniciar Sesión</h3>
+                                    <p>Ingrese su usuario y contraseña:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" method="post" action="@Url.Action("Login", "Home")" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Usuario</label>
+                     @*                   @Html.TextBoxFor(x => x.Usuario, new { @type = "text", @name = "usuario", @placeholder = "Usuario...", @class = "form-username form-control", @id = "usuario" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Contraseña</label>
+                       @*                 @Html.TextBoxFor(x => x.Clave, new { @type = "password", @name = "password", @placeholder = "Contraseña...", @class = "form-password form-control", @id = "password" })*@
+                                    </div>
+                                    <button type="submit" class="btn"><i class="fa fa-sign-in"></i> Iniciar Sesión</button>
+                                </form>
+                            </div>
+                        </div>
 
-.header{
-	position: absolute;
-	top: calc(50% - 35px);
-	left: calc(50% - 255px);
-	z-index: 2;
-}
+                        @*<div class="social-login">
+                            <h3>...o inicia sesión con:</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                    <i class="fa fa-google-plus"></i> Google Plus
+                                </a>
+                            </div>
+                        </div>*@
+                    </div>
 
-.header div{
-	float: left;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 35px;
-	font-weight: 200;
-}
+                    <div class="col-sm-1 middle-border"></div>
+                    <div class="col-sm-1"></div>
 
-.header div span{
-	color: #5379fa !important;
-}
+                    <div class="col-sm-5">
 
-.login{
-	position: absolute;
-	top: calc(50% - 75px);
-	left: calc(50% - 50px);
-	height: 150px;
-	width: 350px;
-	padding: 10px;
-	z-index: 2;
-}
+                        <div class="form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Regístrate ahora</h3>
+                                    <p>
+                                        Llena tus datos para poder acceder:<br />
+                                        <i>(Solo para clientes)</i>
+                                    </p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" method="post" action="@Url.Action("AddCliente", "Home")" class="registration-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="nombre">Nombre</label>
+                             @*           @Html.TextBoxFor(x => x.Nombre, new { @type = "text", @name = "nombre", @placeholder = "Nombre...", @class = "form-first-name form-control", @id = "nombre" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="apellido">Apellidos</label>
+                               @*         @Html.TextBoxFor(x => x.Apellido, new { @type = "text", @name = "apellido", @placeholder = "Apellido...", @class = "form-last-name form-control", @id = "apellido" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="dni">DNI</label>
+                                 @*       @Html.TextBoxFor(x => x.DNI, new { @type = "text", @name = "dni", @placeholder = "DNI...", @class = "form-last-name form-control", @id = "dni" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="dni">Peso</label>
+                              @*          @Html.TextBoxFor(x => x.Peso, new { @type = "text", @name = "peso", @placeholder = "Peso...", @class = "form-last-name form-control", @id = "peso" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="dni">Talla</label>
+                              @*          @Html.TextBoxFor(x => x.Talla, new { @type = "text", @name = "talla", @placeholder = "Talla...", @class = "form-last-name form-control", @id = "talla" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="dni">Usuario</label>
+                            @*            @Html.TextBoxFor(x => x.Usuario, new { @type = "text", @name = "usuario", @placeholder = "Usuario...", @class = "form-last-name form-control", @id = "usuario" })*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="dni">Clave</label>
+                          @*              @Html.TextBoxFor(x => x.Clave, new { @type = "text", @name = "clave", @placeholder = "Clave...", @class = "form-last-name form-control", @id = "clave" })*@
+                                    </div>
+                                    <button type="submit" class="btn">Registrarse</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
 
-.login input[type=text]{
-	width: 250px;
-	height: 30px;
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 2px;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 4px;
-}
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="footer-border"></div>
+                    <p>
+                        Muévete UPC - UPC GYM <br />
+                        Desarrollado por: <a href="https://www.facebook.com/ulices.melendezacosta">Ulices Meléndez</a> y <a href="https://www.facebook.com/david.solanoupec">David Silva</a>
+                    </p>
+                </div>
 
-.login input[type=password]{
-	width: 250px;
-	height: 30px;
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 2px;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 4px;
-	margin-top: 10px;
-}
+            </div>
+        </div>
+    </footer>
+    <!-- Javascript -->
+    <script src="@Url.Content("~/Content/vendors/assets/js/jquery-1.11.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendors/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendors/assets/js/scripts.js")"></script>
 
-.login input[type=button]{
-	width: 260px;
-	height: 35px;
-	background: #fff;
-	border: 1px solid #fff;
-	cursor: pointer;
-	border-radius: 2px;
-	color: #a18d6c;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 6px;
-	margin-top: 10px;
-}
-
-.login input[type=button]:hover{
-	opacity: 0.8;
-}
-
-.login input[type=button]:active{
-	opacity: 0.6;
-}
-
-.login input[type=text]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=password]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=button]:focus{
-	outline: none;
-}
-
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-    </style>
-
-    
-        <script src="js/prefixfree.min.js"></script>
-
-    
-  </head>
-
-  <body>
-
-    <div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Iniciar<span>Sesión</span></div>
-		</div>
-		<br>
-		<div class="login">
-				<input type="text" placeholder="Usuario" name="usuario"><br>
-				<input type="password" placeholder="Contraseña" name="contrasena"><br>
-				<input type="button" value="Login">
-		</div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    
-    
-    
-    
-  </body>
+</body>
 </html>
