@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.guian.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceEnterprise" targetNamespace="http://services.guian.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GuianServer/ServiceEnterprise?xsd=1" namespace="http://services.guian.com/" />
+    </xsd:schema>
+  </types>
+  <message name="deleteEnterprise">
+    <part name="parameters" element="tns:deleteEnterprise" />
+  </message>
+  <message name="deleteEnterpriseResponse">
+    <part name="parameters" element="tns:deleteEnterpriseResponse" />
+  </message>
+  <message name="getEnterprises">
+    <part name="parameters" element="tns:getEnterprises" />
+  </message>
+  <message name="getEnterprisesResponse">
+    <part name="parameters" element="tns:getEnterprisesResponse" />
+  </message>
+  <message name="editEnterprise">
+    <part name="parameters" element="tns:editEnterprise" />
+  </message>
+  <message name="editEnterpriseResponse">
+    <part name="parameters" element="tns:editEnterpriseResponse" />
+  </message>
+  <message name="LoginAdmin">
+    <part name="parameters" element="tns:LoginAdmin" />
+  </message>
+  <message name="LoginAdminResponse">
+    <part name="parameters" element="tns:LoginAdminResponse" />
+  </message>
+  <message name="addEnterprise">
+    <part name="parameters" element="tns:addEnterprise" />
+  </message>
+  <message name="addEnterpriseResponse">
+    <part name="parameters" element="tns:addEnterpriseResponse" />
+  </message>
+  <message name="getEnterprisesByStatus">
+    <part name="parameters" element="tns:getEnterprisesByStatus" />
+  </message>
+  <message name="getEnterprisesByStatusResponse">
+    <part name="parameters" element="tns:getEnterprisesByStatusResponse" />
+  </message>
+  <portType name="ServiceEnterprise">
+    <operation name="deleteEnterprise">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/deleteEnterpriseRequest" message="tns:deleteEnterprise" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/deleteEnterpriseResponse" message="tns:deleteEnterpriseResponse" />
+    </operation>
+    <operation name="getEnterprises">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/getEnterprisesRequest" message="tns:getEnterprises" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/getEnterprisesResponse" message="tns:getEnterprisesResponse" />
+    </operation>
+    <operation name="editEnterprise">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/editEnterpriseRequest" message="tns:editEnterprise" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/editEnterpriseResponse" message="tns:editEnterpriseResponse" />
+    </operation>
+    <operation name="LoginAdmin">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/LoginAdminRequest" message="tns:LoginAdmin" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/LoginAdminResponse" message="tns:LoginAdminResponse" />
+    </operation>
+    <operation name="addEnterprise">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/addEnterpriseRequest" message="tns:addEnterprise" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/addEnterpriseResponse" message="tns:addEnterpriseResponse" />
+    </operation>
+    <operation name="getEnterprisesByStatus">
+      <input wsam:Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusRequest" message="tns:getEnterprisesByStatus" />
+      <output wsam:Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusResponse" message="tns:getEnterprisesByStatusResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceEnterprisePortBinding" type="tns:ServiceEnterprise">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="deleteEnterprise">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEnterprises">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editEnterprise">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LoginAdmin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addEnterprise">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEnterprisesByStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceEnterprise">
+    <port name="ServiceEnterprisePort" binding="tns:ServiceEnterprisePortBinding">
+      <soap:address location="http://localhost:8080/GuianServer/ServiceEnterprise" />
+    </port>
+  </service>
+</definitions>

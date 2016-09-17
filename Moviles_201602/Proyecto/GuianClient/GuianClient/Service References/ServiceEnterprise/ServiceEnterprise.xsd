@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.guian.com/" targetNamespace="http://services.guian.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="LoginAdmin" type="tns:LoginAdmin" />
+  <xs:element name="LoginAdminResponse" type="tns:LoginAdminResponse" />
+  <xs:element name="addEnterprise" type="tns:addEnterprise" />
+  <xs:element name="addEnterpriseResponse" type="tns:addEnterpriseResponse" />
+  <xs:element name="deleteEnterprise" type="tns:deleteEnterprise" />
+  <xs:element name="deleteEnterpriseResponse" type="tns:deleteEnterpriseResponse" />
+  <xs:element name="editEnterprise" type="tns:editEnterprise" />
+  <xs:element name="editEnterpriseResponse" type="tns:editEnterpriseResponse" />
+  <xs:element name="getEnterprises" type="tns:getEnterprises" />
+  <xs:element name="getEnterprisesByStatus" type="tns:getEnterprisesByStatus" />
+  <xs:element name="getEnterprisesByStatusResponse" type="tns:getEnterprisesByStatusResponse" />
+  <xs:element name="getEnterprisesResponse" type="tns:getEnterprisesResponse" />
+  <xs:complexType name="getEnterprisesByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnterprisesByStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="category" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element name="enterpriseID" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="RUC" type="xs:int" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginAdminResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addEnterpriseResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getEnterprises">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getEnterprisesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editEnterpriseResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="deleteEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteEnterpriseResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

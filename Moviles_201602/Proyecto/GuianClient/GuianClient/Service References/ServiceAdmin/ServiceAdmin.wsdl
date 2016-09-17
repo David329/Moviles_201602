@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.guian.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceAdmin" targetNamespace="http://services.guian.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GuianServer/ServiceAdmin?xsd=1" namespace="http://services.guian.com/" />
+    </xsd:schema>
+  </types>
+  <message name="LoginAdmin">
+    <part name="parameters" element="tns:LoginAdmin" />
+  </message>
+  <message name="LoginAdminResponse">
+    <part name="parameters" element="tns:LoginAdminResponse" />
+  </message>
+  <portType name="ServiceAdmin">
+    <operation name="LoginAdmin">
+      <input wsam:Action="http://services.guian.com/ServiceAdmin/LoginAdminRequest" message="tns:LoginAdmin" />
+      <output wsam:Action="http://services.guian.com/ServiceAdmin/LoginAdminResponse" message="tns:LoginAdminResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceAdminPortBinding" type="tns:ServiceAdmin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="LoginAdmin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceAdmin">
+    <port name="ServiceAdminPort" binding="tns:ServiceAdminPortBinding">
+      <soap:address location="http://localhost:8080/GuianServer/ServiceAdmin" />
+    </port>
+  </service>
+</definitions>

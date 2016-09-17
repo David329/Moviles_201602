@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.guian.com/" targetNamespace="http://services.guian.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addPlaceTour" type="tns:addPlaceTour" />
+  <xs:element name="addPlaceTourResponse" type="tns:addPlaceTourResponse" />
+  <xs:element name="addTour" type="tns:addTour" />
+  <xs:element name="addTourResponse" type="tns:addTourResponse" />
+  <xs:element name="deleteTour" type="tns:deleteTour" />
+  <xs:element name="deleteTourResponse" type="tns:deleteTourResponse" />
+  <xs:element name="editTour" type="tns:editTour" />
+  <xs:element name="editTourResponse" type="tns:editTourResponse" />
+  <xs:element name="getTours" type="tns:getTours" />
+  <xs:element name="getToursByEnterprise" type="tns:getToursByEnterprise" />
+  <xs:element name="getToursByEnterpriseResponse" type="tns:getToursByEnterpriseResponse" />
+  <xs:element name="getToursResponse" type="tns:getToursResponse" />
+  <xs:complexType name="deleteTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element name="enterpriseID" type="xs:int" />
+      <xs:element minOccurs="0" name="logo" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element name="star" type="xs:int" />
+      <xs:element name="tourID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteTourResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="editTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editTourResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getToursByEnterprise">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getToursByEnterpriseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPlaceTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:placeTour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeTour">
+    <xs:sequence>
+      <xs:element name="placeID" type="xs:int" />
+      <xs:element name="tourID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPlaceTourResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addTourResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getTours">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getToursResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tour" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
