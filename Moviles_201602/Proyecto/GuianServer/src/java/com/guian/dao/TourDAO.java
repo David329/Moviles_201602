@@ -231,7 +231,7 @@ public class TourDAO {
     }
 
     /*
-    No se craera otra JavaClass para Place_Tour, se desarrollara en esta clase
+    No se craera otra JavaClass para Place_Tour, se desarrollara en esta clase para ahorrarnos un Ws
      */
     public void addPlaceTour(PlaceTour objPlaceTour) {
         Connection cn = null;
@@ -256,6 +256,38 @@ public class TourDAO {
             ps.executeUpdate();
             cn.commit();
 
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException("No se tiene acceso al servidor");
+        } finally {
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+            }
+        }
+    }
+    
+    public List<PlaceTour> getPlacesTour() {
+        Connection cn = null;
+        try {
+            List<PlaceTour> lstPlacesTours = new ArrayList<>();
+            cn = AccessDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Place_Tour");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                PlaceTour obj = new PlaceTour();
+                obj.setPlaceID(rs.getInt("PlaceID"));
+                obj.setTourID(rs.getInt("TourID"));
+
+                lstPlacesTours.add(obj);
+            }
+            return lstPlacesTours;
         } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage());
         } catch (Exception e) {

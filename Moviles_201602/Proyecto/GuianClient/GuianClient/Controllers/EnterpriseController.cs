@@ -63,6 +63,7 @@ namespace GuianClient.Controllers
                 throw;
             }
         }
+        
         public ActionResult LstTours()
         {
             try
@@ -91,10 +92,75 @@ namespace GuianClient.Controllers
                 throw;
             }
         }
-        #endregion
-        public ActionResult LstPlaces()
+        public ActionResult LstLugTours()
         {
-            return View();
+            try
+            {
+                LstToursVM objViewModel = new LstToursVM();
+                int EnterpriseID = ((ServiceEnterprise.enterprise)Session["objEnterprise"]).enterpriseID;
+                objViewModel.lstTours = objViewModel.getLstTours(EnterpriseID);
+                return View("LstLugTours", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public ActionResult LstPlacesByTour(int? TourID)
+        {
+            try
+            {
+                LstPlacesByTourVM objViewModel = new LstPlacesByTourVM();
+                objViewModel.lstPlaces = objViewModel.getLstPlacesByTour(TourID.Value);
+                return View("LstPlacesByTour", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+        public ActionResult LstCities(int? TourID)
+        {
+            try
+            {
+                LstCitiesVM objViewModel = new LstCitiesVM();
+                objViewModel.lstCities = objViewModel.getLstCities();
+                objViewModel.TourID = TourID.Value;
+                return View("LstCities", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public ActionResult LstPlaces(int? CityID,int? TourID)
+        {
+            try
+            {
+                LstPlacesVM objViewModel = new LstPlacesVM();
+                objViewModel.lstPlaces = objViewModel.getLstPlaces(CityID.Value);
+                objViewModel.TourID = TourID.Value;
+                return View("LstPlaces", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public ActionResult AddPlaceTour(int? PlaceID, int? TourID)
+        {
+            try
+            {
+                AddPlaceTourVM objViewModel = new AddPlaceTourVM();
+                objViewModel.AddPlaceTour(PlaceID.Value,TourID.Value);
+                return RedirectToAction("LstTours");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public ActionResult EntProfile()
         {
@@ -102,7 +168,8 @@ namespace GuianClient.Controllers
         }
         public ActionResult Logout()
         {
-            return View();
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

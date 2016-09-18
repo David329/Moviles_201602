@@ -46,6 +46,11 @@
                             <td>@item.name</td>
                             <td>@item.tourID</td>
                             <td>
+                                <a class="btn btn-default" href="@Url.Action("LstCities",new{ TourID = item.tourID })">
+                                    <i class="fa fa-circle"></i> Agregar Lugar al Tour
+                                </a>
+                            </td>
+                            <td>
                                 <a class="btn btn-default" href="@Url.Action("AddEditTour",new{ TourID = item.tourID })">
                                     <i class="fa fa-edit"></i> Editar
                                 </a>

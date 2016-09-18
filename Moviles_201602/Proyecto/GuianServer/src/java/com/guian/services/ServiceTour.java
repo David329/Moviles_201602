@@ -62,10 +62,19 @@ public class ServiceTour {
         return objTourDAO.getTourByID(TourID);
     }
     
+    //PLACETOUR
+    
     @WebMethod(operationName = "addPlaceTour")
     public void addPlaceTour(PlaceTour objPlaceTour) {
 
         TourDAO objTourDAO = new TourDAO();
         objTourDAO.addPlaceTour(objPlaceTour);
+    }
+    
+    @WebMethod(operationName = "getPlacesTour")
+    public List<PlaceTour> getPlacesTour() {
+
+        TourDAO objTourDAO = new TourDAO();
+        return objTourDAO.getPlacesTour();
     }
 }

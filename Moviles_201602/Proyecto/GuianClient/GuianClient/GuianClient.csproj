@@ -206,7 +206,11 @@
     <Compile Include="ViewModel\AdminVM\LstEnterprisesVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstPlacesVM.cs" />
     <Compile Include="ViewModel\EnterpriseVM\AddEditTourVM.cs" />
+    <Compile Include="ViewModel\EnterpriseVM\AddPlaceTourVM.cs" />
     <Compile Include="ViewModel\EnterpriseVM\DeleteTourVM.cs" />
+    <Compile Include="ViewModel\EnterpriseVM\LstCitiesVM.cs" />
+    <Compile Include="ViewModel\EnterpriseVM\LstPlacesByTourVM.cs" />
+    <Compile Include="ViewModel\EnterpriseVM\LstPlacesVM.cs" />
     <Compile Include="ViewModel\EnterpriseVM\LstToursVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
@@ -451,10 +455,8 @@
     <Content Include="Views\Enterprise\EntInicio.cshtml" />
     <Content Include="Views\Admin\LstEnterprises.cshtml" />
     <Content Include="Views\Admin\LstPlaces.cshtml" />
-    <Content Include="Views\Admin\AdmProfile.cshtml" />
     <Content Include="Views\Enterprise\LstTours.cshtml" />
     <Content Include="Views\Enterprise\LstPlaces.cshtml" />
-    <Content Include="Views\Enterprise\EntProfile.cshtml" />
     <None Include="Service References\ServicePlace\ServicePlace.wsdl" />
     <None Include="Service References\ServicePlace\ServicePlace.xsd">
       <SubType>Designer</SubType>
@@ -464,6 +466,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Views\Enterprise\AddEditTour.cshtml" />
+    <Content Include="Views\Enterprise\LstCities.cshtml" />
+    <Content Include="Views\Enterprise\LstLugTours.cshtml" />
+    <Content Include="Service References\ServiceTour\GuianClient.ServiceTour.getPlacesTourResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceTour\GuianClient.ServiceTour.placeTour.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Enterprise\LstPlacesByTour.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <None Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\bootstrap.js" />

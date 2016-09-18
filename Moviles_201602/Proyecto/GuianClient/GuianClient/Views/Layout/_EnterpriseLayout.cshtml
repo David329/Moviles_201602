@@ -54,8 +54,8 @@
                                 <li class="@(ViewBag.Section == "LstTours" ? "active" : "")">
                                     <a href="@Url.Action("LstTours", "Enterprise")"><i class="fa fa-group"></i> Tours </a> <!--Una pagina de Agregar Tours-->
                                 </li>
-                                <li class="@(ViewBag.Section == "LstPlaces" ? "active" : "")">
-                                    <a href="@Url.Action("LstPlaces", "Enterprise")"><i class="fa fa-institution"></i> Agregar Lugares </a> <!--PRIMERO LISTAR LOS TOURS LUEGO DAR CLIC EN AGREGAR LUGAR Y SE LISTAN LOS LUGARES ||||Una pagina de Agregar Lugares a sus tours-->
+                                <li class="@(ViewBag.Section == "LstLugTours" ? "active" : "")">
+                                    <a href="@Url.Action("LstLugTours", "Enterprise")"><i class="fa fa-institution"></i> Ver lugares de mis tours</a> <!--PRIMERO LISTAR LOS TOURS LUEGO DAR CLIC EN AGREGAR LUGAR Y SE LISTAN LOS LUGARES ||||Una pagina de Agregar Lugares a sus tours-->
                                 </li>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="@Url.Action("EntProfile", "Enterprise")"> Perfil </a></li>
+                                 @* SI NOS PIDE OK  <li><a href="@Url.Action("EntProfile", "Enterprise")"> Perfil </a></li>*@
                                     <li><a href="@Url.Action("Logout", "Enterprise")"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
                                 </ul>
                             </li>

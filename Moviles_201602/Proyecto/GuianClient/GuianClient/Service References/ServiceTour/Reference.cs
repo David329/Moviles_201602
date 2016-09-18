@@ -16,15 +16,6 @@ namespace GuianClient.ServiceTour {
     public interface ServiceTour {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        GuianClient.ServiceTour.getToursByEnterpriseResponse getToursByEnterprise(GuianClient.ServiceTour.getToursByEnterpriseRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> getToursByEnterpriseAsync(GuianClient.ServiceTour.getToursByEnterpriseRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getTourByIDRequest", ReplyAction="http://services.guian.com/ServiceTour/getTourByIDResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,14 +23,6 @@ namespace GuianClient.ServiceTour {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getTourByIDRequest", ReplyAction="http://services.guian.com/ServiceTour/getTourByIDResponse")]
         System.Threading.Tasks.Task<GuianClient.ServiceTour.getTourByIDResponse> getTourByIDAsync(GuianClient.ServiceTour.getTourByIDRequest request);
-        
-        // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addTourResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServiceTour.addTourResponse addTour(GuianClient.ServiceTour.addTourRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addTourResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> addTourAsync(GuianClient.ServiceTour.addTourRequest request);
         
         // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/editTourRequest", ReplyAction="http://services.guian.com/ServiceTour/editTourResponse")]
@@ -50,12 +33,12 @@ namespace GuianClient.ServiceTour {
         System.Threading.Tasks.Task<GuianClient.ServiceTour.editTourResponse> editTourAsync(GuianClient.ServiceTour.editTourRequest request);
         
         // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/deleteTourRequest", ReplyAction="http://services.guian.com/ServiceTour/deleteTourResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addPlaceTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addPlaceTourResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServiceTour.deleteTourResponse deleteTour(GuianClient.ServiceTour.deleteTourRequest request);
+        GuianClient.ServiceTour.addPlaceTourResponse addPlaceTour(GuianClient.ServiceTour.addPlaceTourRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/deleteTourRequest", ReplyAction="http://services.guian.com/ServiceTour/deleteTourResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> deleteTourAsync(GuianClient.ServiceTour.deleteTourRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addPlaceTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addPlaceTourResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> addPlaceTourAsync(GuianClient.ServiceTour.addPlaceTourRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getToursRequest", ReplyAction="http://services.guian.com/ServiceTour/getToursResponse")]
@@ -67,12 +50,38 @@ namespace GuianClient.ServiceTour {
         System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursResponse> getToursAsync(GuianClient.ServiceTour.getToursRequest request);
         
         // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addPlaceTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addPlaceTourResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addTourResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServiceTour.addPlaceTourResponse addPlaceTour(GuianClient.ServiceTour.addPlaceTourRequest request);
+        GuianClient.ServiceTour.addTourResponse addTour(GuianClient.ServiceTour.addTourRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addPlaceTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addPlaceTourResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> addPlaceTourAsync(GuianClient.ServiceTour.addPlaceTourRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/addTourRequest", ReplyAction="http://services.guian.com/ServiceTour/addTourResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> addTourAsync(GuianClient.ServiceTour.addTourRequest request);
+        
+        // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/deleteTourRequest", ReplyAction="http://services.guian.com/ServiceTour/deleteTourResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        GuianClient.ServiceTour.deleteTourResponse deleteTour(GuianClient.ServiceTour.deleteTourRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/deleteTourRequest", ReplyAction="http://services.guian.com/ServiceTour/deleteTourResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> deleteTourAsync(GuianClient.ServiceTour.deleteTourRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        GuianClient.ServiceTour.getToursByEnterpriseResponse getToursByEnterprise(GuianClient.ServiceTour.getToursByEnterpriseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> getToursByEnterpriseAsync(GuianClient.ServiceTour.getToursByEnterpriseRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getPlacesTourRequest", ReplyAction="http://services.guian.com/ServiceTour/getPlacesTourResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        GuianClient.ServiceTour.getPlacesTourResponse getPlacesTour(GuianClient.ServiceTour.getPlacesTourRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceTour/getPlacesTourRequest", ReplyAction="http://services.guian.com/ServiceTour/getPlacesTourResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.getPlacesTourResponse> getPlacesTourAsync(GuianClient.ServiceTour.getPlacesTourRequest request);
     }
     
     /// <comentarios/>
@@ -254,42 +263,6 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getToursByEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class getToursByEnterpriseRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public getToursByEnterpriseRequest() {
-        }
-        
-        public getToursByEnterpriseRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getToursByEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class getToursByEnterpriseResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceTour.tour[] @return;
-        
-        public getToursByEnterpriseResponse() {
-        }
-        
-        public getToursByEnterpriseResponse(GuianClient.ServiceTour.tour[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getTourByID", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
     public partial class getTourByIDRequest {
         
@@ -326,34 +299,6 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addTourRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceTour.tour arg0;
-        
-        public addTourRequest() {
-        }
-        
-        public addTourRequest(GuianClient.ServiceTour.tour arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addTourResponse {
-        
-        public addTourResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="editTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
     public partial class editTourRequest {
         
@@ -382,17 +327,17 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class deleteTourRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addPlaceTourRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceTour.tour arg0;
+        public GuianClient.ServiceTour.placeTour arg0;
         
-        public deleteTourRequest() {
+        public addPlaceTourRequest() {
         }
         
-        public deleteTourRequest(GuianClient.ServiceTour.tour arg0) {
+        public addPlaceTourRequest(GuianClient.ServiceTour.placeTour arg0) {
             this.arg0 = arg0;
         }
     }
@@ -400,10 +345,10 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class deleteTourResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addPlaceTourResponse {
         
-        public deleteTourResponse() {
+        public addPlaceTourResponse() {
         }
     }
     
@@ -438,17 +383,17 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addPlaceTourRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addTourRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceTour.placeTour arg0;
+        public GuianClient.ServiceTour.tour arg0;
         
-        public addPlaceTourRequest() {
+        public addTourRequest() {
         }
         
-        public addPlaceTourRequest(GuianClient.ServiceTour.placeTour arg0) {
+        public addTourRequest(GuianClient.ServiceTour.tour arg0) {
             this.arg0 = arg0;
         }
     }
@@ -456,10 +401,102 @@ namespace GuianClient.ServiceTour {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addPlaceTourResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addTourResponse {
         
-        public addPlaceTourResponse() {
+        public addTourResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class deleteTourRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceTour.tour arg0;
+        
+        public deleteTourRequest() {
+        }
+        
+        public deleteTourRequest(GuianClient.ServiceTour.tour arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class deleteTourResponse {
+        
+        public deleteTourResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getToursByEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getToursByEnterpriseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public getToursByEnterpriseRequest() {
+        }
+        
+        public getToursByEnterpriseRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getToursByEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getToursByEnterpriseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceTour.tour[] @return;
+        
+        public getToursByEnterpriseResponse() {
+        }
+        
+        public getToursByEnterpriseResponse(GuianClient.ServiceTour.tour[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPlacesTour", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getPlacesTourRequest {
+        
+        public getPlacesTourRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPlacesTourResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getPlacesTourResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceTour.placeTour[] @return;
+        
+        public getPlacesTourResponse() {
+        }
+        
+        public getPlacesTourResponse(GuianClient.ServiceTour.placeTour[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -491,29 +528,6 @@ namespace GuianClient.ServiceTour {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceTour.getToursByEnterpriseResponse GuianClient.ServiceTour.ServiceTour.getToursByEnterprise(GuianClient.ServiceTour.getToursByEnterpriseRequest request) {
-            return base.Channel.getToursByEnterprise(request);
-        }
-        
-        public GuianClient.ServiceTour.tour[] getToursByEnterprise(int arg0) {
-            GuianClient.ServiceTour.getToursByEnterpriseRequest inValue = new GuianClient.ServiceTour.getToursByEnterpriseRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServiceTour.getToursByEnterpriseResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).getToursByEnterprise(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> GuianClient.ServiceTour.ServiceTour.getToursByEnterpriseAsync(GuianClient.ServiceTour.getToursByEnterpriseRequest request) {
-            return base.Channel.getToursByEnterpriseAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> getToursByEnterpriseAsync(int arg0) {
-            GuianClient.ServiceTour.getToursByEnterpriseRequest inValue = new GuianClient.ServiceTour.getToursByEnterpriseRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServiceTour.ServiceTour)(this)).getToursByEnterpriseAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         GuianClient.ServiceTour.getTourByIDResponse GuianClient.ServiceTour.ServiceTour.getTourByID(GuianClient.ServiceTour.getTourByIDRequest request) {
             return base.Channel.getTourByID(request);
         }
@@ -534,28 +548,6 @@ namespace GuianClient.ServiceTour {
             GuianClient.ServiceTour.getTourByIDRequest inValue = new GuianClient.ServiceTour.getTourByIDRequest();
             inValue.arg0 = arg0;
             return ((GuianClient.ServiceTour.ServiceTour)(this)).getTourByIDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceTour.addTourResponse GuianClient.ServiceTour.ServiceTour.addTour(GuianClient.ServiceTour.addTourRequest request) {
-            return base.Channel.addTour(request);
-        }
-        
-        public void addTour(GuianClient.ServiceTour.tour arg0) {
-            GuianClient.ServiceTour.addTourRequest inValue = new GuianClient.ServiceTour.addTourRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServiceTour.addTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).addTour(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> GuianClient.ServiceTour.ServiceTour.addTourAsync(GuianClient.ServiceTour.addTourRequest request) {
-            return base.Channel.addTourAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> addTourAsync(GuianClient.ServiceTour.tour arg0) {
-            GuianClient.ServiceTour.addTourRequest inValue = new GuianClient.ServiceTour.addTourRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServiceTour.ServiceTour)(this)).addTourAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -581,25 +573,25 @@ namespace GuianClient.ServiceTour {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceTour.deleteTourResponse GuianClient.ServiceTour.ServiceTour.deleteTour(GuianClient.ServiceTour.deleteTourRequest request) {
-            return base.Channel.deleteTour(request);
+        GuianClient.ServiceTour.addPlaceTourResponse GuianClient.ServiceTour.ServiceTour.addPlaceTour(GuianClient.ServiceTour.addPlaceTourRequest request) {
+            return base.Channel.addPlaceTour(request);
         }
         
-        public void deleteTour(GuianClient.ServiceTour.tour arg0) {
-            GuianClient.ServiceTour.deleteTourRequest inValue = new GuianClient.ServiceTour.deleteTourRequest();
+        public void addPlaceTour(GuianClient.ServiceTour.placeTour arg0) {
+            GuianClient.ServiceTour.addPlaceTourRequest inValue = new GuianClient.ServiceTour.addPlaceTourRequest();
             inValue.arg0 = arg0;
-            GuianClient.ServiceTour.deleteTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).deleteTour(inValue);
+            GuianClient.ServiceTour.addPlaceTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).addPlaceTour(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> GuianClient.ServiceTour.ServiceTour.deleteTourAsync(GuianClient.ServiceTour.deleteTourRequest request) {
-            return base.Channel.deleteTourAsync(request);
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> GuianClient.ServiceTour.ServiceTour.addPlaceTourAsync(GuianClient.ServiceTour.addPlaceTourRequest request) {
+            return base.Channel.addPlaceTourAsync(request);
         }
         
-        public System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> deleteTourAsync(GuianClient.ServiceTour.tour arg0) {
-            GuianClient.ServiceTour.deleteTourRequest inValue = new GuianClient.ServiceTour.deleteTourRequest();
+        public System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> addPlaceTourAsync(GuianClient.ServiceTour.placeTour arg0) {
+            GuianClient.ServiceTour.addPlaceTourRequest inValue = new GuianClient.ServiceTour.addPlaceTourRequest();
             inValue.arg0 = arg0;
-            return ((GuianClient.ServiceTour.ServiceTour)(this)).deleteTourAsync(inValue);
+            return ((GuianClient.ServiceTour.ServiceTour)(this)).addPlaceTourAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -624,25 +616,91 @@ namespace GuianClient.ServiceTour {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceTour.addPlaceTourResponse GuianClient.ServiceTour.ServiceTour.addPlaceTour(GuianClient.ServiceTour.addPlaceTourRequest request) {
-            return base.Channel.addPlaceTour(request);
+        GuianClient.ServiceTour.addTourResponse GuianClient.ServiceTour.ServiceTour.addTour(GuianClient.ServiceTour.addTourRequest request) {
+            return base.Channel.addTour(request);
         }
         
-        public void addPlaceTour(GuianClient.ServiceTour.placeTour arg0) {
-            GuianClient.ServiceTour.addPlaceTourRequest inValue = new GuianClient.ServiceTour.addPlaceTourRequest();
+        public void addTour(GuianClient.ServiceTour.tour arg0) {
+            GuianClient.ServiceTour.addTourRequest inValue = new GuianClient.ServiceTour.addTourRequest();
             inValue.arg0 = arg0;
-            GuianClient.ServiceTour.addPlaceTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).addPlaceTour(inValue);
+            GuianClient.ServiceTour.addTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).addTour(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> GuianClient.ServiceTour.ServiceTour.addPlaceTourAsync(GuianClient.ServiceTour.addPlaceTourRequest request) {
-            return base.Channel.addPlaceTourAsync(request);
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> GuianClient.ServiceTour.ServiceTour.addTourAsync(GuianClient.ServiceTour.addTourRequest request) {
+            return base.Channel.addTourAsync(request);
         }
         
-        public System.Threading.Tasks.Task<GuianClient.ServiceTour.addPlaceTourResponse> addPlaceTourAsync(GuianClient.ServiceTour.placeTour arg0) {
-            GuianClient.ServiceTour.addPlaceTourRequest inValue = new GuianClient.ServiceTour.addPlaceTourRequest();
+        public System.Threading.Tasks.Task<GuianClient.ServiceTour.addTourResponse> addTourAsync(GuianClient.ServiceTour.tour arg0) {
+            GuianClient.ServiceTour.addTourRequest inValue = new GuianClient.ServiceTour.addTourRequest();
             inValue.arg0 = arg0;
-            return ((GuianClient.ServiceTour.ServiceTour)(this)).addPlaceTourAsync(inValue);
+            return ((GuianClient.ServiceTour.ServiceTour)(this)).addTourAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceTour.deleteTourResponse GuianClient.ServiceTour.ServiceTour.deleteTour(GuianClient.ServiceTour.deleteTourRequest request) {
+            return base.Channel.deleteTour(request);
+        }
+        
+        public void deleteTour(GuianClient.ServiceTour.tour arg0) {
+            GuianClient.ServiceTour.deleteTourRequest inValue = new GuianClient.ServiceTour.deleteTourRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServiceTour.deleteTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).deleteTour(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> GuianClient.ServiceTour.ServiceTour.deleteTourAsync(GuianClient.ServiceTour.deleteTourRequest request) {
+            return base.Channel.deleteTourAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceTour.deleteTourResponse> deleteTourAsync(GuianClient.ServiceTour.tour arg0) {
+            GuianClient.ServiceTour.deleteTourRequest inValue = new GuianClient.ServiceTour.deleteTourRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServiceTour.ServiceTour)(this)).deleteTourAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceTour.getToursByEnterpriseResponse GuianClient.ServiceTour.ServiceTour.getToursByEnterprise(GuianClient.ServiceTour.getToursByEnterpriseRequest request) {
+            return base.Channel.getToursByEnterprise(request);
+        }
+        
+        public GuianClient.ServiceTour.tour[] getToursByEnterprise(int arg0) {
+            GuianClient.ServiceTour.getToursByEnterpriseRequest inValue = new GuianClient.ServiceTour.getToursByEnterpriseRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServiceTour.getToursByEnterpriseResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).getToursByEnterprise(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> GuianClient.ServiceTour.ServiceTour.getToursByEnterpriseAsync(GuianClient.ServiceTour.getToursByEnterpriseRequest request) {
+            return base.Channel.getToursByEnterpriseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceTour.getToursByEnterpriseResponse> getToursByEnterpriseAsync(int arg0) {
+            GuianClient.ServiceTour.getToursByEnterpriseRequest inValue = new GuianClient.ServiceTour.getToursByEnterpriseRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServiceTour.ServiceTour)(this)).getToursByEnterpriseAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceTour.getPlacesTourResponse GuianClient.ServiceTour.ServiceTour.getPlacesTour(GuianClient.ServiceTour.getPlacesTourRequest request) {
+            return base.Channel.getPlacesTour(request);
+        }
+        
+        public GuianClient.ServiceTour.placeTour[] getPlacesTour() {
+            GuianClient.ServiceTour.getPlacesTourRequest inValue = new GuianClient.ServiceTour.getPlacesTourRequest();
+            GuianClient.ServiceTour.getPlacesTourResponse retVal = ((GuianClient.ServiceTour.ServiceTour)(this)).getPlacesTour(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceTour.getPlacesTourResponse> GuianClient.ServiceTour.ServiceTour.getPlacesTourAsync(GuianClient.ServiceTour.getPlacesTourRequest request) {
+            return base.Channel.getPlacesTourAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceTour.getPlacesTourResponse> getPlacesTourAsync() {
+            GuianClient.ServiceTour.getPlacesTourRequest inValue = new GuianClient.ServiceTour.getPlacesTourRequest();
+            return ((GuianClient.ServiceTour.ServiceTour)(this)).getPlacesTourAsync(inValue);
         }
     }
 }

@@ -8,6 +8,8 @@
   <xs:element name="deleteTourResponse" type="tns:deleteTourResponse" />
   <xs:element name="editTour" type="tns:editTour" />
   <xs:element name="editTourResponse" type="tns:editTourResponse" />
+  <xs:element name="getPlacesTour" type="tns:getPlacesTour" />
+  <xs:element name="getPlacesTourResponse" type="tns:getPlacesTourResponse" />
   <xs:element name="getTourByID" type="tns:getTourByID" />
   <xs:element name="getTourByIDResponse" type="tns:getTourByIDResponse" />
   <xs:element name="getTours" type="tns:getTours" />
@@ -51,15 +53,23 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tour" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="addPlaceTour">
+  <xs:complexType name="getPlacesTour">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getPlacesTourResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:placeTour" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:placeTour" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="placeTour">
     <xs:sequence>
       <xs:element name="placeID" type="xs:int" />
       <xs:element name="tourID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPlaceTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:placeTour" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="addPlaceTourResponse">
