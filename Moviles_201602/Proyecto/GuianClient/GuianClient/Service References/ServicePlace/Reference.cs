@@ -16,12 +16,12 @@ namespace GuianClient.ServicePlace {
     public interface ServicePlace {
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/editPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/editPlaceResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/addPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/addPlaceResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServicePlace.editPlaceResponse editPlace(GuianClient.ServicePlace.editPlaceRequest request);
+        GuianClient.ServicePlace.addPlaceResponse addPlace(GuianClient.ServicePlace.addPlaceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/editPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/editPlaceResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.editPlaceResponse> editPlaceAsync(GuianClient.ServicePlace.editPlaceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/addPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/addPlaceResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> addPlaceAsync(GuianClient.ServicePlace.addPlaceRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesResponse")]
@@ -32,14 +32,13 @@ namespace GuianClient.ServicePlace {
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesResponse")]
         System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesResponse> getPlacesAsync(GuianClient.ServicePlace.getPlacesRequest request);
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesByCityResponse")]
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/editPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/editPlaceResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        GuianClient.ServicePlace.getPlacesByCityResponse getPlacesByCity(GuianClient.ServicePlace.getPlacesByCityRequest request);
+        GuianClient.ServicePlace.editPlaceResponse editPlace(GuianClient.ServicePlace.editPlaceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesByCityResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesByCityResponse> getPlacesByCityAsync(GuianClient.ServicePlace.getPlacesByCityRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/editPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/editPlaceResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.editPlaceResponse> editPlaceAsync(GuianClient.ServicePlace.editPlaceRequest request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/deletePlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/deletePlaceResponse")]
@@ -49,13 +48,23 @@ namespace GuianClient.ServicePlace {
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/deletePlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/deletePlaceResponse")]
         System.Threading.Tasks.Task<GuianClient.ServicePlace.deletePlaceResponse> deletePlaceAsync(GuianClient.ServicePlace.deletePlaceRequest request);
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/addPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/addPlaceResponse")]
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesByCityResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServicePlace.addPlaceResponse addPlace(GuianClient.ServicePlace.addPlaceRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        GuianClient.ServicePlace.getPlacesByCityResponse getPlacesByCity(GuianClient.ServicePlace.getPlacesByCityRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/addPlaceRequest", ReplyAction="http://services.guian.com/ServicePlace/addPlaceResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> addPlaceAsync(GuianClient.ServicePlace.addPlaceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlacesByCityResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesByCityResponse> getPlacesByCityAsync(GuianClient.ServicePlace.getPlacesByCityRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlaceByIDRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlaceByIDResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        GuianClient.ServicePlace.getPlaceByIDResponse getPlaceByID(GuianClient.ServicePlace.getPlaceByIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServicePlace/getPlaceByIDRequest", ReplyAction="http://services.guian.com/ServicePlace/getPlaceByIDResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlaceByIDResponse> getPlaceByIDAsync(GuianClient.ServicePlace.getPlaceByIDRequest request);
     }
     
     /// <remarks/>
@@ -191,17 +200,17 @@ namespace GuianClient.ServicePlace {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editPlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class editPlaceRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addPlaceRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public GuianClient.ServicePlace.place arg0;
         
-        public editPlaceRequest() {
+        public addPlaceRequest() {
         }
         
-        public editPlaceRequest(GuianClient.ServicePlace.place arg0) {
+        public addPlaceRequest(GuianClient.ServicePlace.place arg0) {
             this.arg0 = arg0;
         }
     }
@@ -209,10 +218,10 @@ namespace GuianClient.ServicePlace {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editPlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class editPlaceResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addPlaceResponse {
         
-        public editPlaceResponse() {
+        public addPlaceResponse() {
         }
     }
     
@@ -241,6 +250,62 @@ namespace GuianClient.ServicePlace {
         
         public getPlacesResponse(GuianClient.ServicePlace.place[] @return) {
             this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editPlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class editPlaceRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServicePlace.place arg0;
+        
+        public editPlaceRequest() {
+        }
+        
+        public editPlaceRequest(GuianClient.ServicePlace.place arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editPlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class editPlaceResponse {
+        
+        public editPlaceResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deletePlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class deletePlaceRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServicePlace.place arg0;
+        
+        public deletePlaceRequest() {
+        }
+        
+        public deletePlaceRequest(GuianClient.ServicePlace.place arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deletePlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class deletePlaceResponse {
+        
+        public deletePlaceResponse() {
         }
     }
     
@@ -283,17 +348,17 @@ namespace GuianClient.ServicePlace {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deletePlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class deletePlaceRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPlaceByID", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getPlaceByIDRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServicePlace.place arg0;
+        public int arg0;
         
-        public deletePlaceRequest() {
+        public getPlaceByIDRequest() {
         }
         
-        public deletePlaceRequest(GuianClient.ServicePlace.place arg0) {
+        public getPlaceByIDRequest(int arg0) {
             this.arg0 = arg0;
         }
     }
@@ -301,38 +366,18 @@ namespace GuianClient.ServicePlace {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deletePlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class deletePlaceResponse {
-        
-        public deletePlaceResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlace", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addPlaceRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPlaceByIDResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getPlaceByIDResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServicePlace.place arg0;
+        public GuianClient.ServicePlace.place @return;
         
-        public addPlaceRequest() {
+        public getPlaceByIDResponse() {
         }
         
-        public addPlaceRequest(GuianClient.ServicePlace.place arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addPlaceResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addPlaceResponse {
-        
-        public addPlaceResponse() {
+        public getPlaceByIDResponse(GuianClient.ServicePlace.place @return) {
+            this.@return = @return;
         }
     }
     
@@ -364,6 +409,49 @@ namespace GuianClient.ServicePlace {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServicePlace.addPlaceResponse GuianClient.ServicePlace.ServicePlace.addPlace(GuianClient.ServicePlace.addPlaceRequest request) {
+            return base.Channel.addPlace(request);
+        }
+        
+        public void addPlace(GuianClient.ServicePlace.place arg0) {
+            GuianClient.ServicePlace.addPlaceRequest inValue = new GuianClient.ServicePlace.addPlaceRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServicePlace.addPlaceResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).addPlace(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> GuianClient.ServicePlace.ServicePlace.addPlaceAsync(GuianClient.ServicePlace.addPlaceRequest request) {
+            return base.Channel.addPlaceAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> addPlaceAsync(GuianClient.ServicePlace.place arg0) {
+            GuianClient.ServicePlace.addPlaceRequest inValue = new GuianClient.ServicePlace.addPlaceRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServicePlace.ServicePlace)(this)).addPlaceAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServicePlace.getPlacesResponse GuianClient.ServicePlace.ServicePlace.getPlaces(GuianClient.ServicePlace.getPlacesRequest request) {
+            return base.Channel.getPlaces(request);
+        }
+        
+        public GuianClient.ServicePlace.place[] getPlaces() {
+            GuianClient.ServicePlace.getPlacesRequest inValue = new GuianClient.ServicePlace.getPlacesRequest();
+            GuianClient.ServicePlace.getPlacesResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).getPlaces(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesResponse> GuianClient.ServicePlace.ServicePlace.getPlacesAsync(GuianClient.ServicePlace.getPlacesRequest request) {
+            return base.Channel.getPlacesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesResponse> getPlacesAsync() {
+            GuianClient.ServicePlace.getPlacesRequest inValue = new GuianClient.ServicePlace.getPlacesRequest();
+            return ((GuianClient.ServicePlace.ServicePlace)(this)).getPlacesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         GuianClient.ServicePlace.editPlaceResponse GuianClient.ServicePlace.ServicePlace.editPlace(GuianClient.ServicePlace.editPlaceRequest request) {
             return base.Channel.editPlace(request);
         }
@@ -386,24 +474,25 @@ namespace GuianClient.ServicePlace {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServicePlace.getPlacesResponse GuianClient.ServicePlace.ServicePlace.getPlaces(GuianClient.ServicePlace.getPlacesRequest request) {
-            return base.Channel.getPlaces(request);
+        GuianClient.ServicePlace.deletePlaceResponse GuianClient.ServicePlace.ServicePlace.deletePlace(GuianClient.ServicePlace.deletePlaceRequest request) {
+            return base.Channel.deletePlace(request);
         }
         
-        public GuianClient.ServicePlace.place[] getPlaces() {
-            GuianClient.ServicePlace.getPlacesRequest inValue = new GuianClient.ServicePlace.getPlacesRequest();
-            GuianClient.ServicePlace.getPlacesResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).getPlaces(inValue);
-            return retVal.@return;
+        public void deletePlace(GuianClient.ServicePlace.place arg0) {
+            GuianClient.ServicePlace.deletePlaceRequest inValue = new GuianClient.ServicePlace.deletePlaceRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServicePlace.deletePlaceResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).deletePlace(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesResponse> GuianClient.ServicePlace.ServicePlace.getPlacesAsync(GuianClient.ServicePlace.getPlacesRequest request) {
-            return base.Channel.getPlacesAsync(request);
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.deletePlaceResponse> GuianClient.ServicePlace.ServicePlace.deletePlaceAsync(GuianClient.ServicePlace.deletePlaceRequest request) {
+            return base.Channel.deletePlaceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlacesResponse> getPlacesAsync() {
-            GuianClient.ServicePlace.getPlacesRequest inValue = new GuianClient.ServicePlace.getPlacesRequest();
-            return ((GuianClient.ServicePlace.ServicePlace)(this)).getPlacesAsync(inValue);
+        public System.Threading.Tasks.Task<GuianClient.ServicePlace.deletePlaceResponse> deletePlaceAsync(GuianClient.ServicePlace.place arg0) {
+            GuianClient.ServicePlace.deletePlaceRequest inValue = new GuianClient.ServicePlace.deletePlaceRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServicePlace.ServicePlace)(this)).deletePlaceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -430,47 +519,26 @@ namespace GuianClient.ServicePlace {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServicePlace.deletePlaceResponse GuianClient.ServicePlace.ServicePlace.deletePlace(GuianClient.ServicePlace.deletePlaceRequest request) {
-            return base.Channel.deletePlace(request);
+        GuianClient.ServicePlace.getPlaceByIDResponse GuianClient.ServicePlace.ServicePlace.getPlaceByID(GuianClient.ServicePlace.getPlaceByIDRequest request) {
+            return base.Channel.getPlaceByID(request);
         }
         
-        public void deletePlace(GuianClient.ServicePlace.place arg0) {
-            GuianClient.ServicePlace.deletePlaceRequest inValue = new GuianClient.ServicePlace.deletePlaceRequest();
+        public GuianClient.ServicePlace.place getPlaceByID(int arg0) {
+            GuianClient.ServicePlace.getPlaceByIDRequest inValue = new GuianClient.ServicePlace.getPlaceByIDRequest();
             inValue.arg0 = arg0;
-            GuianClient.ServicePlace.deletePlaceResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).deletePlace(inValue);
+            GuianClient.ServicePlace.getPlaceByIDResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).getPlaceByID(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.deletePlaceResponse> GuianClient.ServicePlace.ServicePlace.deletePlaceAsync(GuianClient.ServicePlace.deletePlaceRequest request) {
-            return base.Channel.deletePlaceAsync(request);
+        System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlaceByIDResponse> GuianClient.ServicePlace.ServicePlace.getPlaceByIDAsync(GuianClient.ServicePlace.getPlaceByIDRequest request) {
+            return base.Channel.getPlaceByIDAsync(request);
         }
         
-        public System.Threading.Tasks.Task<GuianClient.ServicePlace.deletePlaceResponse> deletePlaceAsync(GuianClient.ServicePlace.place arg0) {
-            GuianClient.ServicePlace.deletePlaceRequest inValue = new GuianClient.ServicePlace.deletePlaceRequest();
+        public System.Threading.Tasks.Task<GuianClient.ServicePlace.getPlaceByIDResponse> getPlaceByIDAsync(int arg0) {
+            GuianClient.ServicePlace.getPlaceByIDRequest inValue = new GuianClient.ServicePlace.getPlaceByIDRequest();
             inValue.arg0 = arg0;
-            return ((GuianClient.ServicePlace.ServicePlace)(this)).deletePlaceAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServicePlace.addPlaceResponse GuianClient.ServicePlace.ServicePlace.addPlace(GuianClient.ServicePlace.addPlaceRequest request) {
-            return base.Channel.addPlace(request);
-        }
-        
-        public void addPlace(GuianClient.ServicePlace.place arg0) {
-            GuianClient.ServicePlace.addPlaceRequest inValue = new GuianClient.ServicePlace.addPlaceRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServicePlace.addPlaceResponse retVal = ((GuianClient.ServicePlace.ServicePlace)(this)).addPlace(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> GuianClient.ServicePlace.ServicePlace.addPlaceAsync(GuianClient.ServicePlace.addPlaceRequest request) {
-            return base.Channel.addPlaceAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServicePlace.addPlaceResponse> addPlaceAsync(GuianClient.ServicePlace.place arg0) {
-            GuianClient.ServicePlace.addPlaceRequest inValue = new GuianClient.ServicePlace.addPlaceRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServicePlace.ServicePlace)(this)).addPlaceAsync(inValue);
+            return ((GuianClient.ServicePlace.ServicePlace)(this)).getPlaceByIDAsync(inValue);
         }
     }
 }

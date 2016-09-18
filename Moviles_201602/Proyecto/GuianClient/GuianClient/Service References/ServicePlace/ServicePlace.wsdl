@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/GuianServer/ServicePlace?xsd=1" namespace="http://services.guian.com/" />
     </xsd:schema>
   </types>
-  <message name="editPlace">
-    <part name="parameters" element="tns:editPlace" />
+  <message name="addPlace">
+    <part name="parameters" element="tns:addPlace" />
   </message>
-  <message name="editPlaceResponse">
-    <part name="parameters" element="tns:editPlaceResponse" />
+  <message name="addPlaceResponse">
+    <part name="parameters" element="tns:addPlaceResponse" />
   </message>
   <message name="getPlaces">
     <part name="parameters" element="tns:getPlaces" />
@@ -17,11 +17,11 @@
   <message name="getPlacesResponse">
     <part name="parameters" element="tns:getPlacesResponse" />
   </message>
-  <message name="getPlacesByCity">
-    <part name="parameters" element="tns:getPlacesByCity" />
+  <message name="editPlace">
+    <part name="parameters" element="tns:editPlace" />
   </message>
-  <message name="getPlacesByCityResponse">
-    <part name="parameters" element="tns:getPlacesByCityResponse" />
+  <message name="editPlaceResponse">
+    <part name="parameters" element="tns:editPlaceResponse" />
   </message>
   <message name="deletePlace">
     <part name="parameters" element="tns:deletePlace" />
@@ -29,37 +29,47 @@
   <message name="deletePlaceResponse">
     <part name="parameters" element="tns:deletePlaceResponse" />
   </message>
-  <message name="addPlace">
-    <part name="parameters" element="tns:addPlace" />
+  <message name="getPlacesByCity">
+    <part name="parameters" element="tns:getPlacesByCity" />
   </message>
-  <message name="addPlaceResponse">
-    <part name="parameters" element="tns:addPlaceResponse" />
+  <message name="getPlacesByCityResponse">
+    <part name="parameters" element="tns:getPlacesByCityResponse" />
+  </message>
+  <message name="getPlaceByID">
+    <part name="parameters" element="tns:getPlaceByID" />
+  </message>
+  <message name="getPlaceByIDResponse">
+    <part name="parameters" element="tns:getPlaceByIDResponse" />
   </message>
   <portType name="ServicePlace">
-    <operation name="editPlace">
-      <input wsam:Action="http://services.guian.com/ServicePlace/editPlaceRequest" message="tns:editPlace" />
-      <output wsam:Action="http://services.guian.com/ServicePlace/editPlaceResponse" message="tns:editPlaceResponse" />
+    <operation name="addPlace">
+      <input wsam:Action="http://services.guian.com/ServicePlace/addPlaceRequest" message="tns:addPlace" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/addPlaceResponse" message="tns:addPlaceResponse" />
     </operation>
     <operation name="getPlaces">
       <input wsam:Action="http://services.guian.com/ServicePlace/getPlacesRequest" message="tns:getPlaces" />
       <output wsam:Action="http://services.guian.com/ServicePlace/getPlacesResponse" message="tns:getPlacesResponse" />
     </operation>
-    <operation name="getPlacesByCity">
-      <input wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest" message="tns:getPlacesByCity" />
-      <output wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityResponse" message="tns:getPlacesByCityResponse" />
+    <operation name="editPlace">
+      <input wsam:Action="http://services.guian.com/ServicePlace/editPlaceRequest" message="tns:editPlace" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/editPlaceResponse" message="tns:editPlaceResponse" />
     </operation>
     <operation name="deletePlace">
       <input wsam:Action="http://services.guian.com/ServicePlace/deletePlaceRequest" message="tns:deletePlace" />
       <output wsam:Action="http://services.guian.com/ServicePlace/deletePlaceResponse" message="tns:deletePlaceResponse" />
     </operation>
-    <operation name="addPlace">
-      <input wsam:Action="http://services.guian.com/ServicePlace/addPlaceRequest" message="tns:addPlace" />
-      <output wsam:Action="http://services.guian.com/ServicePlace/addPlaceResponse" message="tns:addPlaceResponse" />
+    <operation name="getPlacesByCity">
+      <input wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest" message="tns:getPlacesByCity" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityResponse" message="tns:getPlacesByCityResponse" />
+    </operation>
+    <operation name="getPlaceByID">
+      <input wsam:Action="http://services.guian.com/ServicePlace/getPlaceByIDRequest" message="tns:getPlaceByID" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/getPlaceByIDResponse" message="tns:getPlaceByIDResponse" />
     </operation>
   </portType>
   <binding name="ServicePlacePortBinding" type="tns:ServicePlace">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="editPlace">
+    <operation name="addPlace">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getPlacesByCity">
+    <operation name="editPlace">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +105,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="addPlace">
+    <operation name="getPlacesByCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPlaceByID">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

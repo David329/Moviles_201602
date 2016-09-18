@@ -13,6 +13,7 @@ namespace GuianClient.ViewModel.AdminVM
 
         public List<enterprise> GetLstEnterprises()
         {
+            ServiceEnterprise = new ServiceEnterpriseClient();
             if (string.IsNullOrEmpty(Filtro)) return ServiceEnterprise.getEnterprises().ToList();
             else return ServiceEnterprise.getEnterprisesByStatus(Filtro).ToList();
         }

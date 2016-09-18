@@ -2,35 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using GuianClient.ServiceAdmin;
+using GuianClient.ServiceEnterprise;
 namespace GuianClient.ViewModel
 {
     public class LoginViewModel
     {
-        private ServiceEnterprise.ServiceEnterpriseClient serviceEN;
-        private ServiceAdmin.ServiceAdminClient serviceAD;
+        private ServiceEnterpriseClient serviceEN;
+        private ServiceAdminClient serviceAD;
 
-        public ServiceEnterprise.enterprise ObjEnterprise { get; set; }
+        public enterprise ObjEnterprise { get; set; }
 
-        public void AddEnterprise(ServiceEnterprise.enterprise obj)
+        public void AddEnterprise(enterprise obj)
         {
-            serviceEN = new ServiceEnterprise.ServiceEnterpriseClient();
+            serviceEN = new ServiceEnterpriseClient();
             serviceEN.addEnterprise(obj);
         }
-        public ServiceEnterprise.enterprise LoginEnterprise(ServiceEnterprise.enterprise obj)
+        public enterprise LoginEnterprise(enterprise obj)
         {
-            serviceEN = new ServiceEnterprise.ServiceEnterpriseClient();
+            serviceEN = new ServiceEnterpriseClient();
             obj = serviceEN.LoginEnterprise(obj);
             return obj;
         }
-        public ServiceAdmin.admin LoginAdmin(ServiceEnterprise.enterprise obj)
+        public admin LoginAdmin(enterprise obj)
         {
             //Creamos un objeto Admin, xq como parametro esta enterprise y es xq en un login quiero q detecte cualquiera de los 2
-            ServiceAdmin.admin ObjAdmin = new ServiceAdmin.admin();
+            admin ObjAdmin = new admin();
             ObjAdmin.email = obj.email;
             ObjAdmin.password = obj.password;
 
-            serviceAD = new ServiceAdmin.ServiceAdminClient();
+            serviceAD = new ServiceAdminClient();
             ObjAdmin = serviceAD.LoginAdmin(ObjAdmin);
             return ObjAdmin;
         }

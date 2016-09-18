@@ -53,4 +53,11 @@ public class ServicePlace {
         PlaceDAO objPlaceDAO = new PlaceDAO();
         return objPlaceDAO.getPlacesByCity(CityID);
     }
+    
+    @WebMethod(operationName = "getPlaceByID")
+    public Place getPlaceByID(int PlaceID) {
+        
+        PlaceDAO objPlaceDAO = new PlaceDAO();
+        return objPlaceDAO.getPlaceByID(PlaceID);
+    }
 }

@@ -83,5 +83,15 @@ alter table Place_TopPlaces add constraint FK_Place_TopPlaces_Top foreign key(To
 /*Datos de prueba*/	
 insert into Admin(Email,Password,FirstName,LastName)values('a','a','David','Silva');
 
+insert into Enterprise(Email,Password,Name,Category,RUC,Status)values('b','b','Maricarmen','Peras',123465,'PEN');
+
+insert into City(Name,Country)values('Lima','Peru');
+insert into City(Name,Country)values('Medellin','Colombia');
+insert into City(Name,Country)values('Arequipa','Peru');
+
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Machu','AKA EL LINK','0','0','Descripzhiioon',0,1);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Pikachu','AKA EL LINK','0','0','Descripzhiioon2',0,2);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('VAMOACALMARNO','AKA EL LINK','0','0','Descripzhiioon3',0,1);
 
 
+				

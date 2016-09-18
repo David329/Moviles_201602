@@ -200,6 +200,8 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\AdminVM\AddEditPlaceVM.cs" />
+    <Compile Include="ViewModel\AdminVM\DeletePlaceVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstEnterprisesVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstPlacesVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -431,6 +433,9 @@
     <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.editPlaceResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.getPlaceByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServicePlace\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -447,6 +452,7 @@
     <None Include="Service References\ServicePlace\ServicePlace.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Admin\AddEditPlace.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <None Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\bootstrap.js" />

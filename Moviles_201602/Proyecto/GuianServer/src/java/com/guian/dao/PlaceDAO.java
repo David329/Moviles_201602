@@ -19,7 +19,7 @@ import java.util.List;
  * @author David
  */
 public class PlaceDAO {
-    
+
     public void addPlace(Place objPlace) {
         Connection cn = null;
         try {
@@ -60,7 +60,7 @@ public class PlaceDAO {
             }
         }
     }
-    
+
     public void editPlace(Place objPlace) {
         Connection cn = null;
         try {
@@ -94,7 +94,7 @@ public class PlaceDAO {
             }
         }
     }
-    
+
     public void deletePlace(Place objPlace) {
         Connection cn = null;
         try {
@@ -120,7 +120,7 @@ public class PlaceDAO {
             }
         }
     }
-    
+
     public List<Place> getPlaces() {
         Connection cn = null;
         try {
@@ -158,7 +158,7 @@ public class PlaceDAO {
             }
         }
     }
-    
+
     public List<Place> getPlacesByCity(int CityID) {
         Connection cn = null;
         try {
@@ -184,6 +184,43 @@ public class PlaceDAO {
                 lstPlaces.add(obj);
             }
             return lstPlaces;
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException("No se tiene acceso al servidor");
+        } finally {
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+            }
+        }
+    }
+
+    public Place getPlaceByID(int PlaceID) {
+        Connection cn = null;
+        try {
+            Place obj = new Place();
+            cn = AccessDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Place WHERE PlaceID=?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setInt(1, PlaceID);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                obj.setPlaceID(rs.getInt("PlaceID"));
+                obj.setName(rs.getString("Name"));
+                obj.setAudio(rs.getString("Audio"));
+                obj.setLongitud(rs.getString("Longitud"));
+                obj.setLatitud(rs.getString("Latitud"));
+                obj.setDescription(rs.getString("Description"));
+                obj.setVisits(rs.getInt("Visits"));
+                obj.setCityID(rs.getInt("CityID"));
+
+            }
+            return obj;
         } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage());
         } catch (Exception e) {

@@ -15,6 +15,8 @@ namespace GuianClient.ViewModel.AdminVM
 
         public List<place> GetLstPlaces()
         {
+            ServicePlace = new ServicePlaceClient();
+            ServiceCity = new ServiceCityClient();
             if (string.IsNullOrEmpty(Filtro)) return ServicePlace.getPlaces().ToList();
             else
             {

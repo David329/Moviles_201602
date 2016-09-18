@@ -21,6 +21,57 @@ namespace GuianClient.Controllers
         }
 
         #region Places
+        public ActionResult AddEditPlace(int? PlaceID)
+        {
+            try
+            {
+                AddEditPlaceVM objViewModel = new AddEditPlaceVM();
+                if (PlaceID.HasValue)
+                {
+                    objViewModel.objPlace = objViewModel.getPlaceByID(PlaceID.Value);
+                    //objViewModel.PlaceID = objViewModel.objPlace.placeID;
+                }
+                else objViewModel.objPlace = new ServicePlace.place();
+                objViewModel.lstCities = objViewModel.getCities();
+                objViewModel.select();
+                return View("AddEditPlace", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [HttpPost]
+        public ActionResult AddEditPlace(AddEditPlaceVM objViewModel)
+        {
+            try
+            {
+                if (objViewModel.objPlace.placeID > 0)
+                {
+                    objViewModel.EditPlace(objViewModel.objPlace);
+                }
+                else { objViewModel.objPlace.visits = 0; objViewModel.AddPlace(objViewModel.objPlace); }
+
+                return RedirectToAction("LstPlaces");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public ActionResult DeletePlace(int? PlaceID)
+        {
+            try
+            {
+                DeletePlaceVM objViewModel = new DeletePlaceVM();
+                objViewModel.DeletePlace(PlaceID.Value);
+                return RedirectToAction("LstPlaces");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public ActionResult LstPlaces()
         {
             try
