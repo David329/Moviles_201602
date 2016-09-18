@@ -155,7 +155,7 @@ public class EnterpriseDAO {
             }
         }
     }
-    
+
     public List<Enterprise> getEnterprises() {
         Connection cn = null;
         try {
@@ -179,6 +179,41 @@ public class EnterpriseDAO {
                 lstEnterprises.add(obj);
             }
             return lstEnterprises;
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException("No se tiene acceso al servidor");
+        } finally {
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+            }
+        }
+    }
+
+    public Enterprise getEnterpriseByID(int EnterpriseID) {
+        Connection cn = null;
+        try {
+            cn = AccessDB.getConnection();
+            Enterprise obj = new Enterprise();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Enterprise WHERE EnterpriseID=?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setInt(1, EnterpriseID);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                obj.setEnterpriseID(rs.getInt("EnterpriseID"));
+                obj.setEmail(rs.getString("Email"));
+                obj.setPassword(rs.getString("Password"));
+                obj.setName(rs.getString("Name"));
+                obj.setCategory(rs.getString("Category"));
+                obj.setRUC(rs.getInt("RUC"));
+                obj.setStatus(rs.getString("Status"));
+            }
+            return obj;
         } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage());
         } catch (Exception e) {

@@ -54,6 +54,13 @@ public class ServiceEnterprise {
         return objEnterpriseDAO.getEnterprises();
     }
     
+    @WebMethod(operationName = "getEnterpriseByID")
+    public Enterprise getEnterpriseByID(int EnterpriseID) {
+
+        EnterpriseDAO objEnterpriseDAO = new EnterpriseDAO();
+        return objEnterpriseDAO.getEnterpriseByID(EnterpriseID);
+    }
+    
     @WebMethod(operationName = "getEnterprisesByStatus")
     public List<Enterprise> getEnterprisesByStatus(String status) {
 

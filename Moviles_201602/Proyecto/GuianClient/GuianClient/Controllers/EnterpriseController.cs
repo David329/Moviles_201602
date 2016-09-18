@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using GuianClient.ViewModel;
-
+using GuianClient.ViewModel.EnterpriseVM;
 namespace GuianClient.Controllers
 {
     public class EnterpriseController : Controller
@@ -12,7 +11,17 @@ namespace GuianClient.Controllers
         }
         public ActionResult LstTours()
         {
-            return View();
+            try
+            {
+                LstToursVM objViewModel = new LstToursVM();
+                objViewModel.lstTours = objViewModel.getLstTours();
+                return View("LstTours", objViewModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public ActionResult LstPlaces()
         {

@@ -100,6 +100,20 @@ namespace GuianClient.Controllers
         }
         #endregion
         #region Enterprises
+        public ActionResult ActDesEnterprise(int enterpriseID, string status)
+        {
+            try
+            {
+                ActDesEnterpriseVM objViewModel = new ActDesEnterpriseVM();
+                if (status == "PEN"||status=="DES") objViewModel.ActDesPlace(enterpriseID, "ACT");
+                else objViewModel.ActDesPlace(enterpriseID, "DES");
+                return RedirectToAction("LstEnterprises");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public ActionResult LstEnterprises()
         {
             try

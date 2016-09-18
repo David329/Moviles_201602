@@ -8,6 +8,8 @@
   <xs:element name="deleteEnterpriseResponse" type="tns:deleteEnterpriseResponse" />
   <xs:element name="editEnterprise" type="tns:editEnterprise" />
   <xs:element name="editEnterpriseResponse" type="tns:editEnterpriseResponse" />
+  <xs:element name="getEnterpriseByID" type="tns:getEnterpriseByID" />
+  <xs:element name="getEnterpriseByIDResponse" type="tns:getEnterpriseByIDResponse" />
   <xs:element name="getEnterprises" type="tns:getEnterprises" />
   <xs:element name="getEnterprisesByStatus" type="tns:getEnterprisesByStatus" />
   <xs:element name="getEnterprisesByStatusResponse" type="tns:getEnterprisesByStatusResponse" />
@@ -74,5 +76,15 @@
   </xs:complexType>
   <xs:complexType name="deleteEnterpriseResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getEnterpriseByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnterpriseByIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enterprise" />
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>

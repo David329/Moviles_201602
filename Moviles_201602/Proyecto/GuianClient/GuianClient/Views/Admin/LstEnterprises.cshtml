@@ -3,6 +3,7 @@
     ViewBag.Title = "LstEnterprises";
     ViewBag.Section = "LstEnterprises";
     Layout = "~/Views/Layout/_AdminLayout.cshtml";
+    string estado;
 }
 
 
@@ -49,18 +50,16 @@
                             <td>@item.RUC</td>
                             <td>@item.status</td>
                             NO VAMOS AGREGAR NI EDITAR SOLO UN BOTON Q CAMBIE ESTADO OKKKKKK
-                            @*<td>
-                                <a class="btn btn-default" href="@Url.Action("AddEditPlace",new{ PlaceID = item.enterpriseID })">
-                                    <i class="fa fa-edit"></i> Editar
+                            <td>
+                                @{
+                                    estado = item.status == "PEN" ? "Activar" : "Desactivar";
+                                }
+                                <a class="btn btn-default" href="@Url.Action("ActDesEnterprise",new{ enterpriseID = item.enterpriseID,status=item.status })">
+                                    <i class="fa fa-edit"></i>@estado
                                 </a>
                             </td>
-                            <td>
-                                <a class="btn btn-default" href="@Url.Action("DeletePlace",new{ PlaceID = item.enterpriseID })">
-                                    <i class="fa fa-remove"></i> Eliminar
-                                </a>
-                            </td>*@
                         </tr>
-                    }
+                                    }
                 </tbody>
             </table>
         </div>

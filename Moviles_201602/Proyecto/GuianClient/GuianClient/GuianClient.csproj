@@ -200,10 +200,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\AdminVM\ActDesEnterpriseVM.cs" />
     <Compile Include="ViewModel\AdminVM\AddEditPlaceVM.cs" />
     <Compile Include="ViewModel\AdminVM\DeletePlaceVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstEnterprisesVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstPlacesVM.cs" />
+    <Compile Include="ViewModel\EnterpriseVM\LstToursVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +415,9 @@
     <None Include="Service References\ServiceCity\ServiceCity.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServiceEnterprise\GuianClient.ServiceEnterprise.getEnterpriseByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServicePlace\configuration91.svcinfo" />
     <None Include="Service References\ServicePlace\configuration.svcinfo" />
     <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.getPlacesByCityResponse.datasource">
@@ -889,7 +894,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModel\EnterpriseVM\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
