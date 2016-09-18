@@ -167,6 +167,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EnterpriseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,7 +179,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceCity\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceEnterprise\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicePlace\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -188,6 +200,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\AdminVM\LstPlacesVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -375,6 +388,64 @@
     <Content Include="Content\vendors\validator\validator.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Service References\ServiceCity\configuration91.svcinfo" />
+    <None Include="Service References\ServiceCity\configuration.svcinfo" />
+    <Content Include="Service References\ServiceCity\GuianClient.ServiceCity.city.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceCity\GuianClient.ServiceCity.getCitiesByCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceCity\GuianClient.ServiceCity.getCitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceCity\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\ServiceEnterprise\GuianClient.ServiceEnterprise.LoginEnterpriseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceCity\ServiceCity.wsdl" />
+    <None Include="Service References\ServiceCity\ServiceCity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicePlace\configuration91.svcinfo" />
+    <None Include="Service References\ServicePlace\configuration.svcinfo" />
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.getPlacesByCityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.getPlacesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.place.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.addPlaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.deletePlaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicePlace\GuianClient.ServicePlace.editPlaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServicePlace\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Admin\AdmInicio.cshtml" />
+    <Content Include="Views\Enterprise\EntInicio.cshtml" />
+    <Content Include="Views\Admin\LstEnterprises.cshtml" />
+    <Content Include="Views\Admin\LstPlaces.cshtml" />
+    <Content Include="Views\Admin\AdmProfile.cshtml" />
+    <Content Include="Views\Enterprise\LstTours.cshtml" />
+    <Content Include="Views\Enterprise\LstPlaces.cshtml" />
+    <Content Include="Views\Enterprise\EntProfile.cshtml" />
+    <None Include="Service References\ServicePlace\ServicePlace.wsdl" />
+    <None Include="Service References\ServicePlace\ServicePlace.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Views\Home\index.cshtml" />
     <None Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
@@ -581,9 +652,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceEnterprise\GuianClient.ServiceEnterprise.getEnterprisesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ServiceEnterprise\GuianClient.ServiceEnterprise.LoginAdminResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceEnterprise\Reference.svcmap">
@@ -809,15 +877,13 @@
     <Content Include="SinglePage\fonts\lato\lato-regular.ttf" />
     <Content Include="SinglePage\fonts\lato\lato-regular.woff" />
     <Content Include="SinglePage\img\Thumbs.db" />
+    <Content Include="Views\Layout\_AdminLayout.cshtml" />
+    <Content Include="Views\Layout\_EnterpriseLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Entities\" />
-    <Folder Include="ViewModel\Admin\" />
-    <Folder Include="ViewModel\Enterprise\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Enterprise\" />
-    <Folder Include="Views\Layout\" />
+    <Folder Include="ViewModel\EnterpriseVM\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -828,7 +894,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceAdmin\" />
+    <WCFMetadataStorage Include="Service References\ServiceCity\" />
     <WCFMetadataStorage Include="Service References\ServiceEnterprise\" />
+    <WCFMetadataStorage Include="Service References\ServicePlace\" />
     <WCFMetadataStorage Include="Service References\ServiceTour\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.guian.com/" targetNamespace="http://services.guian.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="LoginAdmin" type="tns:LoginAdmin" />
-  <xs:element name="LoginAdminResponse" type="tns:LoginAdminResponse" />
+  <xs:element name="LoginEnterprise" type="tns:LoginEnterprise" />
+  <xs:element name="LoginEnterpriseResponse" type="tns:LoginEnterpriseResponse" />
   <xs:element name="addEnterprise" type="tns:addEnterprise" />
   <xs:element name="addEnterpriseResponse" type="tns:addEnterpriseResponse" />
   <xs:element name="deleteEnterprise" type="tns:deleteEnterprise" />
@@ -33,16 +33,6 @@
       <xs:element minOccurs="0" name="status" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="LoginAdmin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="LoginAdminResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:enterprise" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="addEnterprise">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
@@ -50,6 +40,16 @@
   </xs:complexType>
   <xs:complexType name="addEnterpriseResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LoginEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginEnterpriseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enterprise" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getEnterprises">
     <xs:sequence />

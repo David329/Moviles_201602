@@ -10,6 +10,12 @@
     <service name="ServiceTour">
       <implementation-class>com.guian.services.ServiceTour</implementation-class>
     </service>
+    <service name="ServicePlace">
+      <implementation-class>com.guian.services.ServicePlace</implementation-class>
+    </service>
+    <service name="ServiceCity">
+      <implementation-class>com.guian.services.ServiceCity</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

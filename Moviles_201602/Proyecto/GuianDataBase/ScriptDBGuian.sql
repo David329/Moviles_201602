@@ -66,6 +66,7 @@ alter table Place_Tour add constraint PK_Place_Tour primary key(PlaceID,TourID);
 alter table Place_User add constraint PK_Place_User primary key(PlaceID,UserID);
 alter table User_Tour add constraint PK_User_Tour primary key(UserID,TourID);	
 alter table Place_TopPlaces add constraint PK_Place_TopPlaces primary key(PlaceID,TopID);
+
 /*Foreign keys*/				
 alter table Tour add constraint FK_Tour_Enterprise foreign key(EnterpriseID)references Enterprise(EnterpriseID);
 alter table Place add constraint FK_Place_City foreign key(CityID)references City(CityID);
@@ -79,8 +80,8 @@ alter table TopPlaces add constraint FK_TopPlaces_User foreign key(UserID)refere
 alter table Place_TopPlaces add constraint FK_Place_TopPlaces_Place foreign key(PlaceID)references Place(PlaceID);
 alter table Place_TopPlaces add constraint FK_Place_TopPlaces_Top foreign key(TopID)references TopPlaces(TopID);
 
-
-
+/*Datos de prueba*/	
+insert into Admin(Email,Password,FirstName,LastName)values('a','a','David','Silva');
 
 
 

@@ -163,7 +163,7 @@ public class TourDAO {
             List<Tour> lstTours = new ArrayList<>();
             cn = AccessDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("SELECT * FROM Tour");
+            query.append("SELECT * FROM Tour WHERE EnterpriseID=?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ps.setInt(1, EnterpriseID);
             ResultSet rs = ps.executeQuery();

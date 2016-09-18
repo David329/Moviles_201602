@@ -19,7 +19,7 @@ import javax.jws.WebParam;
 @WebService(serviceName = "ServiceEnterprise")
 public class ServiceEnterprise {
 
-    @WebMethod(operationName = "LoginAdmin")
+    @WebMethod(operationName = "LoginEnterprise")
     public Enterprise LoginEnterprise(Enterprise objEnterprise) {
 
         EnterpriseDAO objEnterpriseDAO = new EnterpriseDAO();

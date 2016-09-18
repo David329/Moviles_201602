@@ -155,6 +155,7 @@ public class EnterpriseDAO {
             }
         }
     }
+    
     public List<Enterprise> getEnterprises() {
         Connection cn = null;
         try {

@@ -15,6 +15,31 @@ namespace GuianClient.ServiceEnterprise {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.guian.com/", ConfigurationName="ServiceEnterprise.ServiceEnterprise")]
     public interface ServiceEnterprise {
         
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse getEnterprisesByStatus(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> getEnterprisesByStatusAsync(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/addEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/addEnterpriseResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        GuianClient.ServiceEnterprise.addEnterpriseResponse addEnterprise(GuianClient.ServiceEnterprise.addEnterpriseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/addEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/addEnterpriseResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> addEnterpriseAsync(GuianClient.ServiceEnterprise.addEnterpriseRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/editEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/editEnterpriseResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        GuianClient.ServiceEnterprise.editEnterpriseResponse editEnterprise(GuianClient.ServiceEnterprise.editEnterpriseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/editEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/editEnterpriseResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> editEnterpriseAsync(GuianClient.ServiceEnterprise.editEnterpriseRequest request);
+        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/deleteEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/deleteEnterpriseResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -32,39 +57,14 @@ namespace GuianClient.ServiceEnterprise {
         [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/getEnterprisesRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/getEnterprisesResponse")]
         System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesResponse> getEnterprisesAsync(GuianClient.ServiceEnterprise.getEnterprisesRequest request);
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/editEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/editEnterpriseResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServiceEnterprise.editEnterpriseResponse editEnterprise(GuianClient.ServiceEnterprise.editEnterpriseRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/editEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/editEnterpriseResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> editEnterpriseAsync(GuianClient.ServiceEnterprise.editEnterpriseRequest request);
-        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/LoginAdminRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/LoginAdminResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/LoginEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/LoginEnterpriseResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        GuianClient.ServiceEnterprise.LoginAdminResponse LoginAdmin(GuianClient.ServiceEnterprise.LoginAdminRequest request);
+        GuianClient.ServiceEnterprise.LoginEnterpriseResponse LoginEnterprise(GuianClient.ServiceEnterprise.LoginEnterpriseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/LoginAdminRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/LoginAdminResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginAdminResponse> LoginAdminAsync(GuianClient.ServiceEnterprise.LoginAdminRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/addEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/addEnterpriseResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        GuianClient.ServiceEnterprise.addEnterpriseResponse addEnterprise(GuianClient.ServiceEnterprise.addEnterpriseRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/addEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/addEnterpriseResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> addEnterpriseAsync(GuianClient.ServiceEnterprise.addEnterpriseRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse getEnterprisesByStatus(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/getEnterprisesByStatusResponse")]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> getEnterprisesByStatusAsync(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.guian.com/ServiceEnterprise/LoginEnterpriseRequest", ReplyAction="http://services.guian.com/ServiceEnterprise/LoginEnterpriseResponse")]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginEnterpriseResponse> LoginEnterpriseAsync(GuianClient.ServiceEnterprise.LoginEnterpriseRequest request);
     }
     
     /// <remarks/>
@@ -186,6 +186,98 @@ namespace GuianClient.ServiceEnterprise {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getEnterprisesByStatus", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getEnterprisesByStatusRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getEnterprisesByStatusRequest() {
+        }
+        
+        public getEnterprisesByStatusRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getEnterprisesByStatusResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class getEnterprisesByStatusResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceEnterprise.enterprise[] @return;
+        
+        public getEnterprisesByStatusResponse() {
+        }
+        
+        public getEnterprisesByStatusResponse(GuianClient.ServiceEnterprise.enterprise[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addEnterpriseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceEnterprise.enterprise arg0;
+        
+        public addEnterpriseRequest() {
+        }
+        
+        public addEnterpriseRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class addEnterpriseResponse {
+        
+        public addEnterpriseResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class editEnterpriseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public GuianClient.ServiceEnterprise.enterprise arg0;
+        
+        public editEnterpriseRequest() {
+        }
+        
+        public editEnterpriseRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class editEnterpriseResponse {
+        
+        public editEnterpriseResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="deleteEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
     public partial class deleteEnterpriseRequest {
         
@@ -242,17 +334,17 @@ namespace GuianClient.ServiceEnterprise {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class editEnterpriseRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class LoginEnterpriseRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public GuianClient.ServiceEnterprise.enterprise arg0;
         
-        public editEnterpriseRequest() {
+        public LoginEnterpriseRequest() {
         }
         
-        public editEnterpriseRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
+        public LoginEnterpriseRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
             this.arg0 = arg0;
         }
     }
@@ -260,109 +352,17 @@ namespace GuianClient.ServiceEnterprise {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class editEnterpriseResponse {
-        
-        public editEnterpriseResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginAdmin", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class LoginAdminRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceEnterprise.enterprise arg0;
-        
-        public LoginAdminRequest() {
-        }
-        
-        public LoginAdminRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginAdminResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class LoginAdminResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
+    public partial class LoginEnterpriseResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public GuianClient.ServiceEnterprise.enterprise @return;
         
-        public LoginAdminResponse() {
+        public LoginEnterpriseResponse() {
         }
         
-        public LoginAdminResponse(GuianClient.ServiceEnterprise.enterprise @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addEnterprise", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addEnterpriseRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceEnterprise.enterprise arg0;
-        
-        public addEnterpriseRequest() {
-        }
-        
-        public addEnterpriseRequest(GuianClient.ServiceEnterprise.enterprise arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addEnterpriseResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class addEnterpriseResponse {
-        
-        public addEnterpriseResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getEnterprisesByStatus", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class getEnterprisesByStatusRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        public getEnterprisesByStatusRequest() {
-        }
-        
-        public getEnterprisesByStatusRequest(string arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getEnterprisesByStatusResponse", WrapperNamespace="http://services.guian.com/", IsWrapped=true)]
-    public partial class getEnterprisesByStatusResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.guian.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GuianClient.ServiceEnterprise.enterprise[] @return;
-        
-        public getEnterprisesByStatusResponse() {
-        }
-        
-        public getEnterprisesByStatusResponse(GuianClient.ServiceEnterprise.enterprise[] @return) {
+        public LoginEnterpriseResponse(GuianClient.ServiceEnterprise.enterprise @return) {
             this.@return = @return;
         }
     }
@@ -392,6 +392,73 @@ namespace GuianClient.ServiceEnterprise {
         
         public ServiceEnterpriseClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse GuianClient.ServiceEnterprise.ServiceEnterprise.getEnterprisesByStatus(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request) {
+            return base.Channel.getEnterprisesByStatus(request);
+        }
+        
+        public GuianClient.ServiceEnterprise.enterprise[] getEnterprisesByStatus(string arg0) {
+            GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest inValue = new GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).getEnterprisesByStatus(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.getEnterprisesByStatusAsync(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request) {
+            return base.Channel.getEnterprisesByStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> getEnterprisesByStatusAsync(string arg0) {
+            GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest inValue = new GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).getEnterprisesByStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceEnterprise.addEnterpriseResponse GuianClient.ServiceEnterprise.ServiceEnterprise.addEnterprise(GuianClient.ServiceEnterprise.addEnterpriseRequest request) {
+            return base.Channel.addEnterprise(request);
+        }
+        
+        public void addEnterprise(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.addEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.addEnterpriseRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServiceEnterprise.addEnterpriseResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).addEnterprise(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.addEnterpriseAsync(GuianClient.ServiceEnterprise.addEnterpriseRequest request) {
+            return base.Channel.addEnterpriseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> addEnterpriseAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.addEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.addEnterpriseRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).addEnterpriseAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GuianClient.ServiceEnterprise.editEnterpriseResponse GuianClient.ServiceEnterprise.ServiceEnterprise.editEnterprise(GuianClient.ServiceEnterprise.editEnterpriseRequest request) {
+            return base.Channel.editEnterprise(request);
+        }
+        
+        public void editEnterprise(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.editEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.editEnterpriseRequest();
+            inValue.arg0 = arg0;
+            GuianClient.ServiceEnterprise.editEnterpriseResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).editEnterprise(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.editEnterpriseAsync(GuianClient.ServiceEnterprise.editEnterpriseRequest request) {
+            return base.Channel.editEnterpriseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> editEnterpriseAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.editEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.editEnterpriseRequest();
+            inValue.arg0 = arg0;
+            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).editEnterpriseAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -438,93 +505,26 @@ namespace GuianClient.ServiceEnterprise {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceEnterprise.editEnterpriseResponse GuianClient.ServiceEnterprise.ServiceEnterprise.editEnterprise(GuianClient.ServiceEnterprise.editEnterpriseRequest request) {
-            return base.Channel.editEnterprise(request);
+        GuianClient.ServiceEnterprise.LoginEnterpriseResponse GuianClient.ServiceEnterprise.ServiceEnterprise.LoginEnterprise(GuianClient.ServiceEnterprise.LoginEnterpriseRequest request) {
+            return base.Channel.LoginEnterprise(request);
         }
         
-        public void editEnterprise(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.editEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.editEnterpriseRequest();
+        public GuianClient.ServiceEnterprise.enterprise LoginEnterprise(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.LoginEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.LoginEnterpriseRequest();
             inValue.arg0 = arg0;
-            GuianClient.ServiceEnterprise.editEnterpriseResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).editEnterprise(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.editEnterpriseAsync(GuianClient.ServiceEnterprise.editEnterpriseRequest request) {
-            return base.Channel.editEnterpriseAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.editEnterpriseResponse> editEnterpriseAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.editEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.editEnterpriseRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).editEnterpriseAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceEnterprise.LoginAdminResponse GuianClient.ServiceEnterprise.ServiceEnterprise.LoginAdmin(GuianClient.ServiceEnterprise.LoginAdminRequest request) {
-            return base.Channel.LoginAdmin(request);
-        }
-        
-        public GuianClient.ServiceEnterprise.enterprise LoginAdmin(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.LoginAdminRequest inValue = new GuianClient.ServiceEnterprise.LoginAdminRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServiceEnterprise.LoginAdminResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).LoginAdmin(inValue);
+            GuianClient.ServiceEnterprise.LoginEnterpriseResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).LoginEnterprise(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginAdminResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.LoginAdminAsync(GuianClient.ServiceEnterprise.LoginAdminRequest request) {
-            return base.Channel.LoginAdminAsync(request);
+        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginEnterpriseResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.LoginEnterpriseAsync(GuianClient.ServiceEnterprise.LoginEnterpriseRequest request) {
+            return base.Channel.LoginEnterpriseAsync(request);
         }
         
-        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginAdminResponse> LoginAdminAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.LoginAdminRequest inValue = new GuianClient.ServiceEnterprise.LoginAdminRequest();
+        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.LoginEnterpriseResponse> LoginEnterpriseAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
+            GuianClient.ServiceEnterprise.LoginEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.LoginEnterpriseRequest();
             inValue.arg0 = arg0;
-            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).LoginAdminAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceEnterprise.addEnterpriseResponse GuianClient.ServiceEnterprise.ServiceEnterprise.addEnterprise(GuianClient.ServiceEnterprise.addEnterpriseRequest request) {
-            return base.Channel.addEnterprise(request);
-        }
-        
-        public void addEnterprise(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.addEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.addEnterpriseRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServiceEnterprise.addEnterpriseResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).addEnterprise(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.addEnterpriseAsync(GuianClient.ServiceEnterprise.addEnterpriseRequest request) {
-            return base.Channel.addEnterpriseAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.addEnterpriseResponse> addEnterpriseAsync(GuianClient.ServiceEnterprise.enterprise arg0) {
-            GuianClient.ServiceEnterprise.addEnterpriseRequest inValue = new GuianClient.ServiceEnterprise.addEnterpriseRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).addEnterpriseAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse GuianClient.ServiceEnterprise.ServiceEnterprise.getEnterprisesByStatus(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request) {
-            return base.Channel.getEnterprisesByStatus(request);
-        }
-        
-        public GuianClient.ServiceEnterprise.enterprise[] getEnterprisesByStatus(string arg0) {
-            GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest inValue = new GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest();
-            inValue.arg0 = arg0;
-            GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse retVal = ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).getEnterprisesByStatus(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> GuianClient.ServiceEnterprise.ServiceEnterprise.getEnterprisesByStatusAsync(GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest request) {
-            return base.Channel.getEnterprisesByStatusAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GuianClient.ServiceEnterprise.getEnterprisesByStatusResponse> getEnterprisesByStatusAsync(string arg0) {
-            GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest inValue = new GuianClient.ServiceEnterprise.getEnterprisesByStatusRequest();
-            inValue.arg0 = arg0;
-            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).getEnterprisesByStatusAsync(inValue);
+            return ((GuianClient.ServiceEnterprise.ServiceEnterprise)(this)).LoginEnterpriseAsync(inValue);
         }
     }
 }

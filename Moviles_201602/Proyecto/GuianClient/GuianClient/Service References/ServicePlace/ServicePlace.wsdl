@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.guian.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicePlace" targetNamespace="http://services.guian.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GuianServer/ServicePlace?xsd=1" namespace="http://services.guian.com/" />
+    </xsd:schema>
+  </types>
+  <message name="editPlace">
+    <part name="parameters" element="tns:editPlace" />
+  </message>
+  <message name="editPlaceResponse">
+    <part name="parameters" element="tns:editPlaceResponse" />
+  </message>
+  <message name="getPlaces">
+    <part name="parameters" element="tns:getPlaces" />
+  </message>
+  <message name="getPlacesResponse">
+    <part name="parameters" element="tns:getPlacesResponse" />
+  </message>
+  <message name="getPlacesByCity">
+    <part name="parameters" element="tns:getPlacesByCity" />
+  </message>
+  <message name="getPlacesByCityResponse">
+    <part name="parameters" element="tns:getPlacesByCityResponse" />
+  </message>
+  <message name="deletePlace">
+    <part name="parameters" element="tns:deletePlace" />
+  </message>
+  <message name="deletePlaceResponse">
+    <part name="parameters" element="tns:deletePlaceResponse" />
+  </message>
+  <message name="addPlace">
+    <part name="parameters" element="tns:addPlace" />
+  </message>
+  <message name="addPlaceResponse">
+    <part name="parameters" element="tns:addPlaceResponse" />
+  </message>
+  <portType name="ServicePlace">
+    <operation name="editPlace">
+      <input wsam:Action="http://services.guian.com/ServicePlace/editPlaceRequest" message="tns:editPlace" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/editPlaceResponse" message="tns:editPlaceResponse" />
+    </operation>
+    <operation name="getPlaces">
+      <input wsam:Action="http://services.guian.com/ServicePlace/getPlacesRequest" message="tns:getPlaces" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/getPlacesResponse" message="tns:getPlacesResponse" />
+    </operation>
+    <operation name="getPlacesByCity">
+      <input wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityRequest" message="tns:getPlacesByCity" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/getPlacesByCityResponse" message="tns:getPlacesByCityResponse" />
+    </operation>
+    <operation name="deletePlace">
+      <input wsam:Action="http://services.guian.com/ServicePlace/deletePlaceRequest" message="tns:deletePlace" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/deletePlaceResponse" message="tns:deletePlaceResponse" />
+    </operation>
+    <operation name="addPlace">
+      <input wsam:Action="http://services.guian.com/ServicePlace/addPlaceRequest" message="tns:addPlace" />
+      <output wsam:Action="http://services.guian.com/ServicePlace/addPlaceResponse" message="tns:addPlaceResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicePlacePortBinding" type="tns:ServicePlace">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="editPlace">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPlaces">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPlacesByCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deletePlace">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addPlace">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicePlace">
+    <port name="ServicePlacePort" binding="tns:ServicePlacePortBinding">
+      <soap:address location="http://localhost:8080/GuianServer/ServicePlace" />
+    </port>
+  </service>
+</definitions>

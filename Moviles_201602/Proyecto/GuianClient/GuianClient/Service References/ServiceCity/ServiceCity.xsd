@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.guian.com/" targetNamespace="http://services.guian.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getCities" type="tns:getCities" />
+  <xs:element name="getCitiesByCountry" type="tns:getCitiesByCountry" />
+  <xs:element name="getCitiesByCountryResponse" type="tns:getCitiesByCountryResponse" />
+  <xs:element name="getCitiesResponse" type="tns:getCitiesResponse" />
+  <xs:complexType name="getCities">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="city">
+    <xs:sequence>
+      <xs:element name="cityID" type="xs:int" />
+      <xs:element minOccurs="0" name="country" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesByCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesByCountryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

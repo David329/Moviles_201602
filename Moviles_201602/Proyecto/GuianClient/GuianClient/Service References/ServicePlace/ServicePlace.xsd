@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.guian.com/" targetNamespace="http://services.guian.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addPlace" type="tns:addPlace" />
+  <xs:element name="addPlaceResponse" type="tns:addPlaceResponse" />
+  <xs:element name="deletePlace" type="tns:deletePlace" />
+  <xs:element name="deletePlaceResponse" type="tns:deletePlaceResponse" />
+  <xs:element name="editPlace" type="tns:editPlace" />
+  <xs:element name="editPlaceResponse" type="tns:editPlaceResponse" />
+  <xs:element name="getPlaces" type="tns:getPlaces" />
+  <xs:element name="getPlacesByCity" type="tns:getPlacesByCity" />
+  <xs:element name="getPlacesByCityResponse" type="tns:getPlacesByCityResponse" />
+  <xs:element name="getPlacesResponse" type="tns:getPlacesResponse" />
+  <xs:complexType name="getPlacesByCity">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPlacesByCityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="place">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="audio" type="xs:string" />
+      <xs:element name="cityID" type="xs:int" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="latitud" type="xs:string" />
+      <xs:element minOccurs="0" name="longitud" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element name="placeID" type="xs:int" />
+      <xs:element name="visits" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPlaceResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getPlaces">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getPlacesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePlaceResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="editPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editPlaceResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>
