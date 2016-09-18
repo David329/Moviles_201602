@@ -29,7 +29,7 @@ public class TourDAO {
             StringBuilder query = new StringBuilder();
             query.append("SELECT * FROM Tour WHERE TourID = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setInt(1, objTour.getEnterpriseID());
+            ps.setInt(1, objTour.getTourID());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 throw new SQLException("El codigo del Tour ya existe");
@@ -156,7 +156,7 @@ public class TourDAO {
             }
         }
     }
-    
+
     public List<Tour> getToursByEnterprise(int EnterpriseID) {
         Connection cn = null;
         try {
@@ -194,11 +194,45 @@ public class TourDAO {
             }
         }
     }
-    
+
+    public Tour getTourByID(int TourID) {
+        Connection cn = null;
+        try {
+            cn = AccessDB.getConnection();
+            Tour obj = new Tour();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Tour WHERE TourID=?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setInt(1, TourID);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                obj.setTourID(rs.getInt("TourID"));
+                obj.setName(rs.getString("Name"));
+                obj.setDescription(rs.getString("Description"));
+                obj.setStar(rs.getInt("Star"));
+                obj.setLogo(rs.getString("Logo"));
+                obj.setCost(rs.getBigDecimal("Cost"));
+                obj.setEnterpriseID(rs.getInt("EnterpriseID"));
+            }
+            return obj;
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException("No se tiene acceso al servidor");
+        } finally {
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+            }
+        }
+    }
+
     /*
     No se craera otra JavaClass para Place_Tour, se desarrollara en esta clase
-    */
-    
+     */
     public void addPlaceTour(PlaceTour objPlaceTour) {
         Connection cn = null;
         try {

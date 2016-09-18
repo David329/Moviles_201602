@@ -10,6 +10,7 @@ namespace GuianClient.ViewModel.AdminVM
         private ServiceEnterpriseClient ServiceEnterprise;
         public void ActDesPlace(int EnterpriseID,string status)
         {
+            ServiceEnterprise = new ServiceEnterpriseClient();
             enterprise obj = ServiceEnterprise.getEnterpriseByID(EnterpriseID);
             obj.status = status;
             ServiceEnterprise.editEnterprise(obj);

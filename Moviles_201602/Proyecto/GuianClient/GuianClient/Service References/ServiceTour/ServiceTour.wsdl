@@ -5,11 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/GuianServer/ServiceTour?xsd=1" namespace="http://services.guian.com/" />
     </xsd:schema>
   </types>
-  <message name="addPlaceTour">
-    <part name="parameters" element="tns:addPlaceTour" />
+  <message name="getToursByEnterprise">
+    <part name="parameters" element="tns:getToursByEnterprise" />
   </message>
-  <message name="addPlaceTourResponse">
-    <part name="parameters" element="tns:addPlaceTourResponse" />
+  <message name="getToursByEnterpriseResponse">
+    <part name="parameters" element="tns:getToursByEnterpriseResponse" />
+  </message>
+  <message name="getTourByID">
+    <part name="parameters" element="tns:getTourByID" />
+  </message>
+  <message name="getTourByIDResponse">
+    <part name="parameters" element="tns:getTourByIDResponse" />
   </message>
   <message name="addTour">
     <part name="parameters" element="tns:addTour" />
@@ -17,17 +23,17 @@
   <message name="addTourResponse">
     <part name="parameters" element="tns:addTourResponse" />
   </message>
-  <message name="deleteTour">
-    <part name="parameters" element="tns:deleteTour" />
-  </message>
-  <message name="deleteTourResponse">
-    <part name="parameters" element="tns:deleteTourResponse" />
-  </message>
   <message name="editTour">
     <part name="parameters" element="tns:editTour" />
   </message>
   <message name="editTourResponse">
     <part name="parameters" element="tns:editTourResponse" />
+  </message>
+  <message name="deleteTour">
+    <part name="parameters" element="tns:deleteTour" />
+  </message>
+  <message name="deleteTourResponse">
+    <part name="parameters" element="tns:deleteTourResponse" />
   </message>
   <message name="getTours">
     <part name="parameters" element="tns:getTours" />
@@ -35,41 +41,54 @@
   <message name="getToursResponse">
     <part name="parameters" element="tns:getToursResponse" />
   </message>
-  <message name="getToursByEnterprise">
-    <part name="parameters" element="tns:getToursByEnterprise" />
+  <message name="addPlaceTour">
+    <part name="parameters" element="tns:addPlaceTour" />
   </message>
-  <message name="getToursByEnterpriseResponse">
-    <part name="parameters" element="tns:getToursByEnterpriseResponse" />
+  <message name="addPlaceTourResponse">
+    <part name="parameters" element="tns:addPlaceTourResponse" />
   </message>
   <portType name="ServiceTour">
-    <operation name="addPlaceTour">
-      <input wsam:Action="http://services.guian.com/ServiceTour/addPlaceTourRequest" message="tns:addPlaceTour" />
-      <output wsam:Action="http://services.guian.com/ServiceTour/addPlaceTourResponse" message="tns:addPlaceTourResponse" />
+    <operation name="getToursByEnterprise">
+      <input wsam:Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest" message="tns:getToursByEnterprise" />
+      <output wsam:Action="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse" message="tns:getToursByEnterpriseResponse" />
+    </operation>
+    <operation name="getTourByID">
+      <input wsam:Action="http://services.guian.com/ServiceTour/getTourByIDRequest" message="tns:getTourByID" />
+      <output wsam:Action="http://services.guian.com/ServiceTour/getTourByIDResponse" message="tns:getTourByIDResponse" />
     </operation>
     <operation name="addTour">
       <input wsam:Action="http://services.guian.com/ServiceTour/addTourRequest" message="tns:addTour" />
       <output wsam:Action="http://services.guian.com/ServiceTour/addTourResponse" message="tns:addTourResponse" />
     </operation>
-    <operation name="deleteTour">
-      <input wsam:Action="http://services.guian.com/ServiceTour/deleteTourRequest" message="tns:deleteTour" />
-      <output wsam:Action="http://services.guian.com/ServiceTour/deleteTourResponse" message="tns:deleteTourResponse" />
-    </operation>
     <operation name="editTour">
       <input wsam:Action="http://services.guian.com/ServiceTour/editTourRequest" message="tns:editTour" />
       <output wsam:Action="http://services.guian.com/ServiceTour/editTourResponse" message="tns:editTourResponse" />
+    </operation>
+    <operation name="deleteTour">
+      <input wsam:Action="http://services.guian.com/ServiceTour/deleteTourRequest" message="tns:deleteTour" />
+      <output wsam:Action="http://services.guian.com/ServiceTour/deleteTourResponse" message="tns:deleteTourResponse" />
     </operation>
     <operation name="getTours">
       <input wsam:Action="http://services.guian.com/ServiceTour/getToursRequest" message="tns:getTours" />
       <output wsam:Action="http://services.guian.com/ServiceTour/getToursResponse" message="tns:getToursResponse" />
     </operation>
-    <operation name="getToursByEnterprise">
-      <input wsam:Action="http://services.guian.com/ServiceTour/getToursByEnterpriseRequest" message="tns:getToursByEnterprise" />
-      <output wsam:Action="http://services.guian.com/ServiceTour/getToursByEnterpriseResponse" message="tns:getToursByEnterpriseResponse" />
+    <operation name="addPlaceTour">
+      <input wsam:Action="http://services.guian.com/ServiceTour/addPlaceTourRequest" message="tns:addPlaceTour" />
+      <output wsam:Action="http://services.guian.com/ServiceTour/addPlaceTourResponse" message="tns:addPlaceTourResponse" />
     </operation>
   </portType>
   <binding name="ServiceTourPortBinding" type="tns:ServiceTour">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="addPlaceTour">
+    <operation name="getToursByEnterprise">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTourByID">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,7 +106,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="deleteTour">
+    <operation name="editTour">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,7 +115,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="editTour">
+    <operation name="deleteTour">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +133,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getToursByEnterprise">
+    <operation name="addPlaceTour">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

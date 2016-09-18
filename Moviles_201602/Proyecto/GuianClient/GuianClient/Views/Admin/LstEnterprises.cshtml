@@ -52,7 +52,7 @@
                             NO VAMOS AGREGAR NI EDITAR SOLO UN BOTON Q CAMBIE ESTADO OKKKKKK
                             <td>
                                 @{
-                                    estado = item.status == "PEN" ? "Activar" : "Desactivar";
+                                    estado = item.status == "PEN"||item.status=="DES" ? "Activar" : "Desactivar";
                                 }
                                 <a class="btn btn-default" href="@Url.Action("ActDesEnterprise",new{ enterpriseID = item.enterpriseID,status=item.status })">
                                     <i class="fa fa-edit"></i>@estado

@@ -93,5 +93,6 @@ insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('
 insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Pikachu','AKA EL LINK','0','0','Descripzhiioon2',0,2);
 insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('VAMOACALMARNO','AKA EL LINK','0','0','Descripzhiioon3',0,1);
 
-
-				
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('TurIAN','Pase Grati a IAN',0,'LINK del logo',122.11,1);
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('PEPILANDI','Oshezii',0,'LINK del logo',32.21,1);
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('Elpirata','grasoso',0,'LINK del logo',55.15,1);

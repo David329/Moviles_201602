@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using GuianClient.ServicePlace;
+﻿using GuianClient.ServicePlace;
 namespace GuianClient.ViewModel.AdminVM
 {
     public class DeletePlaceVM
