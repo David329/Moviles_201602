@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using GuianClient.ServicePlace;
+using GuianClient.ServiceCity;
 namespace GuianClient.ViewModel.AdminVM
 {
     public class LstPlacesVM
     {
-        //CODEAR CUANDO ESTE LISTO LIST DE CITY
-        //CODEAR CUANDO ESTE LISTO EL CRUD WS DE ServicePlace
-        //public string Filtro { get; set; }
-        //public List<Cliente> lstCliente { get; set; }
-        //public LstClienteViewModel() { }
-        //public List<Cliente> GetLstCliente()
-        //{
-        //    DBGymUPCEntities context = new DBGymUPCEntities();
-        //    var query = context.Cliente.Where(x => x.Estado == "ACT").AsQueryable();
+        public string Filtro { get; set; }
+        public List<place> lstPlaces { get; set; }
+        private ServicePlaceClient ServicePlace;
+        private ServiceCityClient ServiceCity;
 
-        //    if (!string.IsNullOrEmpty(Filtro))
-        //        query = query.Where(x => x.Nombre.Contains(Filtro.ToUpper()) || x.Apellido.Contains(Filtro.ToUpper()));
-        //    lstCliente = query.ToList();
-        //    return lstCliente;
-        //}
+        public List<place> GetLstPlaces()
+        {
+            if (string.IsNullOrEmpty(Filtro)) return ServicePlace.getPlaces().ToList();
+            else
+            {
+                List<city> lstCities = ServiceCity.getCities().ToList();
+                foreach (city obj in lstCities)
+                {
+                    if (obj.name == Filtro) return ServicePlace.getPlacesByCity(obj.cityID).ToList();
+                }
+            }
+            return null;
+        }
     }
 }

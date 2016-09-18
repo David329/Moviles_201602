@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Web.Mvc;
-using GuianClient.ViewModel;
+using GuianClient.ViewModel.AdminVM;
 
 namespace GuianClient.Controllers
 {
     public class AdminController : Controller
     {
-        public ActionResult LstEnterprises()
-        {
-            return View();
-        }
-        public ActionResult LstPlaces()
-        {
-            LstClienteViewModel objViewModel = new LstClienteViewModel();
-            objViewModel.lstCliente = objViewModel.GetLstCliente();
-            return View("LstClientes", "_AdministradorLayout", objViewModel);
-            //return View();
-        }
+        //X EL MOMENTO LANZAREMOS LAS EXCEPCIONES CON THROW
         public ActionResult AdmInicio()
         {
             return View();
@@ -29,5 +19,62 @@ namespace GuianClient.Controllers
         {
             return View();
         }
+
+        #region Places
+        public ActionResult LstPlaces()
+        {
+            try
+            {
+                LstPlacesVM objViewModel = new LstPlacesVM();
+                objViewModel.lstPlaces = objViewModel.GetLstPlaces();
+                return View("LstPlaces", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [HttpPost]
+        public ActionResult LstPlaces(LstPlacesVM objViewModel)
+        {
+            try
+            {
+                objViewModel.lstPlaces = objViewModel.GetLstPlaces();
+                return View("LstPlaces", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+        #region Enterprises
+        public ActionResult LstEnterprises()
+        {
+            try
+            {
+                LstEnterprisesVM objViewModel = new LstEnterprisesVM();
+                objViewModel.lstEnterprises = objViewModel.GetLstEnterprises();
+                return View("LstEnterprises", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [HttpPost]
+        public ActionResult LstEnterprises(LstEnterprisesVM objViewModel)
+        {
+            try
+            {
+                objViewModel.lstEnterprises = objViewModel.GetLstEnterprises();
+                return View("LstEnterprises", objViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
     }
 }

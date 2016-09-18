@@ -200,6 +200,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\AdminVM\LstEnterprisesVM.cs" />
     <Compile Include="ViewModel\AdminVM\LstPlacesVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
@@ -882,7 +883,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Entities\" />
     <Folder Include="ViewModel\EnterpriseVM\" />
   </ItemGroup>
   <ItemGroup>
