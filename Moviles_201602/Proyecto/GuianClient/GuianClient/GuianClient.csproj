@@ -223,6 +223,7 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\user.png" />
     <Content Include="Content\images\workout.jpg" />
+    <Content Include="Content\ImgFireBase.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\vendors\assets\css\form-elements.css" />
     <Content Include="Content\vendors\assets\css\style.css" />
