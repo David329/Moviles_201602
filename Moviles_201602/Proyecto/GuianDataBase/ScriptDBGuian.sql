@@ -29,7 +29,7 @@ create table Place_Tour(PlaceId int not null,
                         
 						);
 create table Place(		PlaceID int auto_increment primary key,
-						Name varchar(40)not null,
+						Name varchar(50)not null,
                         Audio varchar(9999),/*link*/
                         Longitud varchar(40),
                         Latitud varchar(40),
@@ -85,18 +85,23 @@ insert into Admin(Email,Password,FirstName,LastName)values('a','a','David','Silv
 
 insert into Enterprise(Email,Password,Name,Category,RUC,Status)values('b','b','Maricarmen','Peras',123465,'PEN');
 
-insert into City(Name,Country)values('Lima','Peru');
-insert into City(Name,Country)values('Medellin','Colombia');
+insert into City(Name,Country)values('Cuzco','Peru');
+insert into City(Name,Country)values('Teotihuacan','Mexico');
 insert into City(Name,Country)values('Arequipa','Peru');
+insert into City(Name,Country)values('Ciudad de Mexico','Mexico');
 
-insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Machu','AKA EL LINK','0','0','Descripzhiioon',0,1);
-insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Pikachu','AKA EL LINK','0','0','Descripzhiioon2',0,2);
-insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('VAMOACALMARNO','AKA EL LINK','0','0','Descripzhiioon3',0,1);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Machu Picchu','LINK','0','0','Descripcion',0,1);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Piramide del Sol','LINK','0','0','Descripcion',0,2);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Monasterio Santa Catalina','LINK','0','0','Descripcion',0,3);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Catedral de Cuzco','LINK','0','0','Descripcion',0,1);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Catedral Metropolitana de Mexico','LINK','0','0','Descripcion',0,4);
+insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('Basílica Menor de la Inmaculada Concepción','LINK','0','0','Descripcion',0,4);
 
-insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('TurIAN','Pase Grati a IAN',0,'LINK del logo',122.11,1);
-insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('PEPILANDI','Oshezii',0,'LINK del logo',32.21,1);
-insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('Elpirata','grasoso',0,'LINK del logo',55.15,1);
+
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('DiverTour','Visitaremos la catedral de cuzco, se almorzara en Don Lusho Food y en la tarde visitaremos Machu Picchu',0,'LINK del logo',122.11,1);
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('MexTour','Visitaremos la Catedral de Metropolitana de Mexico para terminar en la basilica menor de la Inamucalada Concepciion',0,'LINK del logo',32.21,1);
 
 insert into Place_Tour(PlaceId,TourID)values(1,1);
 insert into Place_Tour(PlaceId,TourID)values(2,1);
-insert into Place_Tour(PlaceId,TourID)values(3,1);
+insert into Place_Tour(PlaceId,TourID)values(5,2);
+insert into Place_Tour(PlaceId,TourID)values(6,2);
