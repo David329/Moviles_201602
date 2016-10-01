@@ -101,7 +101,17 @@ insert into Place(Name,Audio,Longitud,Latitud,Description,Visits,CityID)values('
 insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('DiverTour','Visitaremos la catedral de cuzco, se almorzara en Don Lusho Food y en la tarde visitaremos Machu Picchu',0,'LINK del logo',122.11,1);
 insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('MexTour','Visitaremos la Catedral de Metropolitana de Mexico para terminar en la basilica menor de la Inamucalada Concepciion',0,'LINK del logo',32.21,1);
 
+<<<<<<< HEAD
 insert into Place_Tour(PlaceId,TourID)values(1,1);
 insert into Place_Tour(PlaceId,TourID)values(2,1);
 insert into Place_Tour(PlaceId,TourID)values(5,2);
 insert into Place_Tour(PlaceId,TourID)values(6,2);
+=======
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('TurIAN','Pase Grati a IAN',0,'LINK del logo',122.11,1);
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('PEPILANDI','Oshezii',0,'LINK del logo',32.21,1);
+insert into Tour(Name,Description,Star,Logo,Cost,EnterpriseID)values('Elpirata','grasoso',0,'LINK del logo',55.15,1);
+
+insert into Place_Tour(PlaceId,TourID)values(1,1);
+insert into Place_Tour(PlaceId,TourID)values(2,1);
+insert into Place_Tour(PlaceId,TourID)values(3,1);
+>>>>>>> b4981fa2d33e2e42d24e8692ca0f02183bfbe7fd

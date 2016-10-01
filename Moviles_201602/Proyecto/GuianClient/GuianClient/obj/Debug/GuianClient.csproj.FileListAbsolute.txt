@@ -343,6 +343,7 @@ C:\Users\alumnos.A303-17\Music\Moviles_201602-master\Moviles_201602\Proyecto\Gui
 C:\Users\alumnos.A303-17\Music\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.csprojResolveAssemblyReference.cache
 C:\Users\alumnos.A303-17\Music\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.dll
 C:\Users\alumnos.A303-17\Music\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.pdb
+<<<<<<< HEAD
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\bin\roslyn\csc.exe
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -412,3 +413,5 @@ C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\Guian
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.csprojResolveAssemblyReference.cache
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.dll
 C:\Users\DavidZilva\Pictures\Moviles_201602-master\Moviles_201602\Proyecto\GuianClient\GuianClient\obj\Debug\GuianClient.pdb
+=======
+>>>>>>> b4981fa2d33e2e42d24e8692ca0f02183bfbe7fd
